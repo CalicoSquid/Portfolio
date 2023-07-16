@@ -6,7 +6,14 @@ export default function Layout(props) {
 
     return (
     <div className="layout flex column justify-space-between">
-        <Navbar toggle={props.toggle} darkMode={props.darkMode} broken={props.broken} breakEverything={props.breakEverything}/>
+        <Navbar 
+        toggle={props.toggle} 
+        darkMode={props.darkMode} 
+        showNav={props.showNav}
+        closeNav={props.closeNav}
+        toggleNav={props.toggleNav}
+        isMobile={props.isMobile}
+        />
         <Outlet />
         <footer>Ⓒ 2023 CalicoSquid Code</footer>
     </div>

@@ -1,28 +1,14 @@
-import { useEffect, useState } from "react";
+
 import { NavLink } from "react-router-dom";
 import laptop from "../Images/contact.png";
+import ClickAwayListener from '@mui/base/ClickAwayListener';
 
 
 export default function Navbar(props) {
 
-    const [width, setWidth] = useState(window.innerWidth);
-    const [showNav, setShowNav] = useState(false)
-    const isMobile = width <= 640;
-
     const activeLinkStyle = {   
         color: "#F04B54",
     }
-
-    const toggleNav = () => setShowNav(prev => !prev)
-
-
-    useEffect(() => {
-        window.addEventListener('resize', () => setWidth(window.innerWidth));
-
-        return () => { 
-            window.removeEventListener('resize', () => setWidth(window.innerWidth));
-        }
-    }, []);
 
     return (
         <nav className="navbar flex justify-space-between">
@@ -35,37 +21,41 @@ export default function Navbar(props) {
             <button 
                 aria-controls="primary-nav" 
                 aria-expanded="false"
-                onClick={toggleNav}
+                onClick={props.toggleNav}
                 className="toggle-nav"
-                >
-                    <span className="sr-only">Menu</span>
-                    <i className={`fa-solid ${showNav ? "fa-xmark" : "fa-bars"}`}/>                   
+            >
+                <span className="sr-only">Menu</span>
+                <i className={`fa-solid ${props.showNav ? "fa-xmark" : "fa-bars"}`}/>                   
             </button>
             
-            {(showNav || !isMobile) && 
-            <div className="nav-links flex">
+            {(props.showNav || !props.isMobile) && 
+            <ClickAwayListener onClickAway={props.closeNav}>
+                <div className="nav-links flex">
                 <NavLink 
                 to="about" 
                 className="link" 
-                onClick={toggleNav}
+                onClick={props.toggleNav}
                 style={({isActive}) => isActive ? activeLinkStyle : null}
-                >About Me
+                >
+                About Me
                 </NavLink>
 
                 <NavLink 
                 to="projects" 
                 className="link" 
-                onClick={toggleNav}
+                onClick={props.toggleNav}
                 style={({isActive}) => isActive ? activeLinkStyle : null}
-                >Projects
+                >
+                Projects
                 </NavLink>
 
                 <NavLink 
                 to="contact" 
                 className="link" 
-                onClick={toggleNav}
+                onClick={props.toggleNav}
                 style={({isActive}) => isActive ? activeLinkStyle : null}
-                >Contact
+                >
+                Contact
                 </NavLink>
 
                 <button 
@@ -79,9 +69,9 @@ export default function Navbar(props) {
                     <i className="fa-solid fa-moon toggle"></i>
                      }
                 </button>
-            </div>} 
-            
-            
+            </div>
+            </ClickAwayListener>
+            } 
         </nav>
     )
 }

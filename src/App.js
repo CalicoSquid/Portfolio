@@ -1,6 +1,6 @@
 
 import './Sass/index.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {RouterProvider, createBrowserRouter, createRoutesFromElements, Route} from "react-router-dom";
 import Main, {loader as cardLoader} from './Components/Main';
 import Layout from './Components/Layout';
@@ -11,23 +11,41 @@ import ProjectDetails, { loader as projectLoader } from './Components/ProjectDet
 import Project from './Components/Project';
 import NotFound from './Components/NotFound';
 import Error from './Components/Error';
-import { getProjects } from './api';
 
 
 
 function App() {
 
- const [toggle, setToggle] = useState(true)
- const [broken, setBroken] = useState(false)
+  const [toggle, setToggle] = useState(true)
+  const [broken, setBroken] = useState(false)
+  const [width, setWidth] = useState(window.innerWidth);
+  const [showNav, setShowNav] = useState(false)
+  const isMobile = width <= 640;
 
   function toggleDarkLight() {
-    setToggle(prevMode => !prevMode)
+    setToggle(prev => !prev)
   }
 
   function breakEverything() {
-    setBroken(prevMode => !prevMode)
-    console.log(broken)
+    setBroken(prev => !prev)
   }
+
+  function toggleNav() { 
+    setShowNav(prev => !prev) 
+  }
+
+  function closeNav() {
+    setShowNav(false)
+  }
+
+
+    useEffect(() => {
+        window.addEventListener('resize', () => setWidth(window.innerWidth));
+
+        return () => { 
+            window.removeEventListener('resize', () => setWidth(window.innerWidth));
+        }
+    }, []);
 
   
 
@@ -39,6 +57,11 @@ function App() {
         <Layout 
           toggle={toggleDarkLight} 
           darkMode={toggle}
+          showNav={showNav}
+          closeNav={closeNav}
+          toggleNav={toggleNav}
+          isMobile={isMobile}
+
         />}
         errorElement={<Error breakEverything={breakEverything}/>}
       >

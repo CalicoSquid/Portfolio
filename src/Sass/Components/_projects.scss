@@ -1,14 +1,15 @@
 
 .project-nav {
+    padding-inline: $base-padding;
+    padding-bottom: 2rem;
 
     a {
         text-align: center;
     }
+
+   
 }
 
-i {
-    color: gray;
-}
 
 
 .project-container  {
@@ -16,7 +17,6 @@ i {
     align-items: flex-start !important;
     padding: $base-padding * 2;
     margin-block: 2em;
-    
 
     .project-text {
         max-width: 500px;
@@ -36,6 +36,8 @@ i {
             &:hover {
                 color: $yellow-theme;
             }
+
+           
         }
     }
 
@@ -64,6 +66,10 @@ i {
 
 .project-page {
     width: 100%;
+
+    i {
+        color: gray;
+    }
 }
 
 @keyframes slideInFromLeft {

@@ -34,7 +34,7 @@ export default function Navbar(props) {
                 <NavLink 
                 to="about" 
                 className="link" 
-                onClick={props.toggleNav}
+                //onClick={props.toggleNav}
                 style={({isActive}) => isActive ? activeLinkStyle : null}
                 >
                 About Me
@@ -43,7 +43,7 @@ export default function Navbar(props) {
                 <NavLink 
                 to="projects" 
                 className="link" 
-                onClick={props.toggleNav}
+                //onClick={props.toggleNav}
                 style={({isActive}) => isActive ? activeLinkStyle : null}
                 >
                 Projects
@@ -52,7 +52,7 @@ export default function Navbar(props) {
                 <NavLink 
                 to="contact" 
                 className="link" 
-                onClick={props.toggleNav}
+                //onClick={props.toggleNav}
                 style={({isActive}) => isActive ? activeLinkStyle : null}
                 >
                 Contact

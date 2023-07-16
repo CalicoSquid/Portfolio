@@ -5,14 +5,13 @@
 
     .toggle-nav {
         display: none;
-        z-index: 5000;
     }
 
     .dark-mode-toggle {
         background: transparent;
         font-size: $font-size-xl;
         margin-left: 10px;
-        color: $secondary-color;
+        color: $blue-theme;
     }
 }
 

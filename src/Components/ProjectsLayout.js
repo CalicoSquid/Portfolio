@@ -1,7 +1,5 @@
 import { Outlet, NavLink, useLoaderData } from "react-router-dom";
 import { getProjects } from "../api";
-import { Carousel } from "react-responsive-carousel"
-//import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import projects from "../Images/projects.png"
 
@@ -15,8 +13,7 @@ export default function ProjectLayout(props) {
     const projectData = useLoaderData()
 
     const activeHostLinkStyle = {
-        borderTop: `10px solid transparent`,
-
+        borderTop: `10px solid transparent`
     }
 
 
@@ -41,7 +38,6 @@ export default function ProjectLayout(props) {
                 </NavLink>
         )
     })
-    .reverse()
 
 
     return (
@@ -57,10 +53,7 @@ export default function ProjectLayout(props) {
                     <img className="thumbnail" src={projects} />                  
                     <p>Home</p>
                 </NavLink>
-                
-                {navLinks}
-         
-                
+                {navLinks}    
             </nav>        
             <Outlet />
         </div>

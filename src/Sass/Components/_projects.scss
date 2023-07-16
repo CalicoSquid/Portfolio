@@ -1,0 +1,78 @@
+
+.project-nav {
+
+    a {
+        text-align: center;
+    }
+}
+
+i {
+    color: gray;
+}
+
+
+.project-container  {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+    align-items: flex-start !important;
+    padding: $base-padding * 2;
+    margin-block: 2em;
+    
+
+    .project-text {
+        max-width: 500px;
+        align-items: flex-start;
+
+        h1 {
+            align-self: flex-start;
+        }
+    
+        h4 {
+            color: $secondary-color;
+        }
+    
+        a {
+            margin-right: $base-margin;
+
+            &:hover {
+                color: $yellow-theme;
+            }
+        }
+    }
+
+    .lang-box {
+        width: 100%;
+
+        .languages {
+            font-size: $font-size-sm;
+            border: 2px solid $secondary-color;
+            padding-inline: $base-padding;
+            padding-block: $base-padding / 2;
+            border-radius: $base-border-radius;
+            color: $yellow-theme;
+            background-color: $accent-color;
+            margin-block: $base-margin;
+        }
+
+    }
+
+}
+
+.project-image {
+   max-height: 300px;
+   //min-height: 300px;
+}
+
+.project-page {
+    width: 100%;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+

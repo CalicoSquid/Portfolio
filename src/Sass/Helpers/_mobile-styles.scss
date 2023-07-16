@@ -1,0 +1,169 @@
+
+@include breakpoint-min(40em) {
+
+    .info-page {
+
+        .about-head {
+            flex-direction:column-reverse;
+            align-items: flex-start;
+            
+            img {
+                height: 200px !important;
+            }
+
+        }
+    }
+
+    .intro, .projects {
+        
+        .section-container {
+            flex-direction: column;
+            width: 70%;
+        }
+
+        .profile-pic {
+            height: 200px;
+        }
+    }
+
+    .main-info {
+        flex-direction: column-reverse !important;
+
+        .info-text {
+            width: 80% !important;
+            text-align: center;
+
+            .intro-links {
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+            }
+        }
+
+    }
+
+
+    .stack {
+
+        p {
+           display: none;
+        }
+    }
+
+    .thumbnail {
+        width: 50px;
+        height: 50px;
+        transition: all 1s;;
+    }
+
+
+    .navbar {
+
+        .toggle-nav {
+            display: block;
+            position: fixed;
+            background: transparent;
+            top: 0.8rem;
+            right: 1rem;
+            z-index: 9999;
+    
+            i { 
+                color: $secondary-color;
+                font-size: 2.5rem;
+        }
+    }
+
+        .nav-links {
+            position: fixed;
+            inset: 0 0 0 50%;
+            flex-direction: column;
+            align-items: baseline;
+            padding: min(30vh, 7rem) 2em;
+            background: hsl(0 0% 0% / 0.5);
+            backdrop-filter: blur(1rem);
+            z-index: 9000;
+
+            a {
+                font-size: $font-size-lrg;
+                color: $primary-color;
+            }
+
+            i {
+                position: absolute;
+                top: 0.8rem;
+                left: 2rem; 
+                font-size: 2rem;
+                z-index: 9999;
+            }
+        }
+    }
+
+    .contact-page {
+
+        .contact-head {
+            flex-direction: column-reverse;
+            align-items: center;
+
+            img {
+                min-width: 200px;
+            }
+            
+        }
+    
+    }
+
+    .project-page {
+        padding: $base-padding;
+
+        .project-container {
+            flex-direction: column;
+
+            .project-text {
+                justify-content: flex-start;
+                height: auto;
+            }
+            
+            .lang-box {
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    .logo-container {
+        justify-content: center !important;
+    }
+
+    .project-image {
+        width: 100% !important;  
+    }
+
+    .cards {
+        width: 60%;
+    }
+}
+
+
+
+@include breakpoint-min(60em) {
+
+    .stack {
+        justify-content: flex-end !important;
+    }
+
+    .logo-container {
+        justify-content: center;
+    }
+
+    .about-head{
+        width: 80% !important;
+    }
+
+    .textbox {
+        width: 80% !important;
+    }
+
+    .contact-head, .logo-container {
+        width: 80% !important;
+    }
+}
+

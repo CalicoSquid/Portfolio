@@ -1,0 +1,49 @@
+
+.info-page {
+    gap: 4rem;
+
+    .about-head {
+        width: 50%;
+        margin: 3rem;
+
+        .info-head {
+            align-items: flex-start;
+
+            h1 {
+                font-size: $font-size-xxl;
+                color: $secondary-color;
+            }
+
+            p {
+                line-height: 1.5em;;
+            }
+        }
+
+        a {
+            background-color: $secondary-color;
+            padding: $base-padding;
+            border-radius: $base-border-radius;
+            box-shadow: $base-box-shadow;
+
+            &:hover {
+                color: white;
+                background-color: $accent-color;
+                text-decoration: none;
+            }
+        }
+    }
+    .description {
+        background: $blue-theme;
+        box-shadow: $base-box-shadow;
+    }
+
+    .textbox {
+        width: 50%;
+        padding-block: $base-padding * 2;
+        line-height: 1.5em;
+        
+        h2 {
+            margin-bottom: $base-margin;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+//Variables & functions
+@import "Helpers/variables";
+@import "Helpers/functions";
+//Helpers
+@import "Helpers/breakpoints";
+//Base
+
+//Components
+@import "Helpers/accesibility";
+@import "Components/nav";  
+@import "Components/main";
+@import "Components/about-me";
+@import "Components/projects";
+@import "Components/contact";
+@import "Components/loader";
+@import "Components/error";
+
+//Utilities
+//@import "utilities";
+@import "Helpers/mobile-styles";
+@import "Helpers/global";
+
+@import "Helpers/dark-mode";

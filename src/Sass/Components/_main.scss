@@ -1,0 +1,98 @@
+
+.main {
+    width: 100%;
+
+    section {
+        width: 100%;
+        
+    }
+}
+
+.intro {
+    width: 80%;
+    min-height: 100vh;
+
+    .section-container {
+
+        .info-text {
+            width: 40%;
+
+            h1 {
+                margin-bottom: $base-margin / 3;
+            }
+
+            h3 {
+                color: $secondary-color;
+            }
+
+            p {
+                margin-block: $base-margin;
+                line-height: 1.5em;
+            }
+
+            a {
+                font-size: $font-size-lrg;
+
+                &:hover {
+                    color: $yellow-theme;
+                }
+
+                i {
+                    font-size: $base-font-size;
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
+            
+    img {
+        max-height: 20rem;
+    }
+
+        .stack {
+            width: 100%;
+            padding: $base-padding;
+            background-color: #363636;
+            background-image: url("../../Images/code.png");
+            background-repeat: no-repeat;
+            background-position: -100px;
+            box-shadow: $base-box-shadow;
+            color: white;
+            font-size: $font-size-lrg;
+            font-weight: 700;
+        }
+}
+
+
+.projects {
+    min-height: 100vh;
+    justify-content: flex-start;
+   
+    .section-container {
+        flex-wrap: wrap;
+    }
+
+    h1 {
+        margin-block: $base-margin;
+    }
+
+    .cards {
+        width: 80%;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+        justify-content: center;
+
+        .card {
+            height: 300px;
+            position: relative;
+
+            i {
+                position: absolute;
+                bottom: 15px;
+                left: 5px;
+            }
+    
+        }
+
+    }
+ 
+}

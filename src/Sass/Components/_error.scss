@@ -1,0 +1,29 @@
+
+
+.error-container {   
+    width: 80%;   
+    align-items: center !important;
+
+    .error-text {
+        margin-left: 2rem;
+    
+        .error-sub-head {
+            color: $secondary-color;
+        }
+    
+    }
+    .fixit {
+        cursor: pointer;
+
+        &:hover {
+            color: $blue-theme;
+        }
+    }
+
+    h3 {
+
+        i {
+            color: $secondary-color;
+        }
+    }
+}

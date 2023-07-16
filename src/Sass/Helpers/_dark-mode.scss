@@ -1,0 +1,22 @@
+
+
+.dark-mode {
+    background-color: $accent-color;
+    color: $primary-color;
+
+    .description {
+        color: $accent-color;
+    }
+
+    .toggle {
+        color: $yellow-theme;
+    }
+
+    .break-everything {
+
+        p {
+            color: $primary-color;
+        }
+        
+    }
+}

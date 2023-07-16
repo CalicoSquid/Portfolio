@@ -1,0 +1,28 @@
+//Navbar styles
+.navbar {
+    width: 100%;
+    padding: $base-padding;
+
+    .toggle-nav {
+        display: none;
+    }
+
+    .dark-mode-toggle {
+        background: transparent;
+        font-size: $font-size-xl;
+        margin-left: 10px;
+        color: $secondary-color;
+    }
+}
+
+// Footer
+footer {
+    width: 100%;
+    color: $primary-color;
+    background-color: #363636;
+    background-image: url("../../Images/code.png");
+    background-repeat: no-repeat;
+    background-position: -110px;
+    text-align: center;
+    padding: $base-padding;
+}

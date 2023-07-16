@@ -1,0 +1,28 @@
+
+.contact-page {
+
+
+    .contact-head {
+
+        .contact-head-text {           
+
+        }
+
+        img {
+            max-width: 300px;
+        }
+
+        .contact-link {
+            line-height: 2em;
+    
+            i {
+                font-size: $font-size-lrg;
+                color: $secondary-color;
+            }
+        }
+
+    }
+    .logo-container {
+        width: 100%;
+    }
+}

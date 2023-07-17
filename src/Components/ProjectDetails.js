@@ -3,6 +3,7 @@ import { useLoaderData, defer, Await } from "react-router-dom";
 import { Suspense } from "react";
 import { getProject } from "../api"
 import Loading from "./Loading";
+import { useSwipeable } from "react-swipeable";
 
 
 export function loader({ params }) {
@@ -16,14 +17,13 @@ export default function ProjectDetails(props) {
 
         const projectPromise = useLoaderData();
 
+        const handlers = useSwipeable({
+            onSwiped: (eventData) => console.log("User Swiped!", eventData),
+            //...config,
+          });
+
         const renderProject = (project) => {
             const langs = project.language.map(lang => <div className="languages">{lang}</div>);
-                            const icon = 
-                            project.type === "Game" ?
-                            "fa-gamepad" :
-                            project.type === "Webapp" ?
-                            "fa-code" :
-                            "fa-earth-americas"
 
                             return (
                                 <div className="project-page justify-center flex">
@@ -31,7 +31,7 @@ export default function ProjectDetails(props) {
                                         <div className="project-text flex column justify-space-between">
                                                 <div>
                                                     <h1>{project.name}</h1>                  
-                                                    <h4><i className={`fa-solid ${icon}`}></i> {project.type}</h4>
+                                                    <h4><i className={`fa-solid ${project.icon}`}></i> {project.type}</h4>
                                                     <br/>
                                                     <p>{project.description}</p>
                                                     <br/>

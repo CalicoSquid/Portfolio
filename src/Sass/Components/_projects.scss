@@ -85,7 +85,12 @@
   .mobile-nav {
 
     .arrows {
+        gap: 0.5rem;
         padding: $base-padding;
+
+        .hide {
+            color: transparent;
+        }
     }
   }
 

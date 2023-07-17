@@ -134,7 +134,9 @@
     }
 
     .project-image {
-        width: 100% !important;  
+        //width: 80% !important;  
+        max-width: 400px !important;
+        //align-self: center;
     }
 
     .cards {

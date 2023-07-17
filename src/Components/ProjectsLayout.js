@@ -19,13 +19,6 @@ export default function ProjectLayout(props) {
 
     const navLinks = projectData.map(project => {
 
-        const icon = 
-        project.type === "Game" ?
-        "fa-gamepad" :
-        project.type === "Webapp" ?
-        "fa-code" :
-        "fa-earth-americas"
-
         return (
                 <NavLink 
                 key={project.id}
@@ -35,7 +28,7 @@ export default function ProjectLayout(props) {
                 style={({isActive}) => isActive ? activeHostLinkStyle : null}
                 > 
                     <img className="thumbnail" src={project.img} alt="" />   
-                    <p> <i className={ `fa-solid ${!props.broken ? icon : "fa-triangle-exclamation broken"}`}></i> {project.name}</p>          
+                    <p> <i className={ `fa-solid ${!props.broken ? project.icon : "fa-triangle-exclamation broken"}`}></i> {project.name}</p>          
                 </NavLink>
         )
     })
@@ -56,11 +49,17 @@ export default function ProjectLayout(props) {
             <nav className="project-nav flex justify-center">       
                 {homeLink}
                 {navLinks}    
-            </nav>    :
+            </nav>    
+            
+            :
 
-            <MobileNav projectData={projectData} image={projects} home={homeLink}/>}
+            <MobileNav 
+            projectData={projectData} 
+            image={projects} 
+            home={homeLink}
+            />}
 
-            <Outlet />
+            <Outlet/>
         </div>
     )
 }

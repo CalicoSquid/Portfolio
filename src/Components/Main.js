@@ -48,17 +48,17 @@ export default function Main(props) {
                             <Link to="/contact" className="scroller">
                                 Contact 
                                 {" "}
-                                <i class="fa-solid fa-arrow-right-long"></i>
+                                <i className="fa-solid fa-arrow-right-long"></i>
                             </Link>
                             <br/>
                             <a href="#projects" className="scroller">
                                 Projects 
                                 {" "}
-                                <i class="fa-solid fa-arrow-down-long"></i>
+                                <i className="fa-solid fa-arrow-down-long"></i>
                             </a>
                         </div> 
                     </div>
-                    <img src={avatar} className="profile-pic" alt="profile picture" />
+                    <img src={avatar} className="profile-pic" alt="" />
                 </div>
                 
                 <div className="stack flex justify-center">

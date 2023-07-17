@@ -3,9 +3,6 @@ import { useLoaderData, defer, Await } from "react-router-dom";
 import { Suspense } from "react";
 import { getProject } from "../api"
 import Loading from "./Loading";
-import { ReactCSSTransitionGroup } from "react"
-import { TransitionGroup, CSSTransition } from "react-transition-group";
-//import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 export function loader({ params }) {

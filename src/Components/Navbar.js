@@ -14,7 +14,7 @@ export default function Navbar(props) {
         <nav className="navbar flex justify-space-between">
             <div className="header">
                 <NavLink to="/">
-                    <img src={laptop} style={{height: "50px"}}/>
+                    <img src={laptop} style={{height: "50px"}} alt=""/>
                 </NavLink>
             </div>
             

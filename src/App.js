@@ -61,7 +61,6 @@ function App() {
           closeNav={closeNav}
           toggleNav={toggleNav}
           isMobile={isMobile}
-
         />}
         errorElement={<Error breakEverything={breakEverything}/>}
       >
@@ -78,6 +77,7 @@ function App() {
           element={ <About /> } 
           errorElement={<Error />} 
         />
+
         <Route 
           path="contact" 
           element={ <Contact 
@@ -92,22 +92,23 @@ function App() {
             darkMode={toggle} 
             breakEverything={breakEverything}
             broken={broken}
+            isMobile={isMobile}
           /> }
           errorElement={<Error breakEverything={breakEverything}/>}
           loader= {navLoader}
         >
-        <Route 
-          index 
-          element={<Project breakEverything={breakEverything} broken={broken}/> } 
-          errorElement={<Error />}
-        />
+          <Route 
+            index 
+            element={<Project breakEverything={breakEverything} broken={broken}/> } 
+            errorElement={<Error />}
+          />
 
-        <Route 
-          path=":id" 
-          element={ <ProjectDetails broken={broken} />} 
-          loader={projectLoader} 
-          errorElement={<Error breakEverything={breakEverything}/>}
-        />
+          <Route 
+            path=":id" 
+            element={ <ProjectDetails broken={broken} />} 
+            loader={projectLoader} 
+            errorElement={<Error breakEverything={breakEverything}/>}
+          />
         </Route>
 
         <Route path="*" element={<NotFound darkMode={toggle}/>} />

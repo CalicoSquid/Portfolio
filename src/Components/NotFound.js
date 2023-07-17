@@ -7,7 +7,11 @@ export default function NotFound(props) {
     return (
         <div className="not-found flex column justify-center">
             <Link to=".."><h3>&larr; Go Back</h3></Link>
-            <img src={props.darkMode ? notFound : notFoundLight} style={{height: "300px"}} />
+            <img 
+            src={props.darkMode ? notFound : notFoundLight} 
+            style={{height: "300px"}}
+            alt=""
+             />
         </div>
         
     )

@@ -11,7 +11,7 @@ export default function Error(props) {
         return (
             <div className="project-page justify-center flex">
                 <div className="error-container project-container flex justify-center">
-                <img src={errorImg} style={{height: "300px"}} />
+                <img src={errorImg} style={{height: "300px"}} alt=""/>
                     <div className="error-text project-text flex column justify-space-between">
                         <h1>Ooops...</h1>
                         <h3 className="broken">Something's gone horribly wrong.</h3>

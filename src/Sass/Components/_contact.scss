@@ -1,11 +1,14 @@
 
 .contact-page {
+    width: 100%;
 
 
     .contact-head {
+        max-width: 50%;   
+        padding: $base-padding * 2;
 
-        .contact-head-text {           
-
+        .contact-head-text {     
+              line-height: 1.4rem;
         }
 
         img {
@@ -23,6 +26,7 @@
 
     }
     .logo-container {
-        width: 100%;
+        width: 50%;
+        justify-content: space-between;
     }
 }

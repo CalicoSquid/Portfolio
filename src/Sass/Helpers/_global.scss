@@ -53,8 +53,8 @@ a {
 .logo-container {
     grid-template-columns: repeat(auto-fit, minmax(80px, 100px));
     margin-block: 50px;
-    justify-content: center;
-    width: 80%;
+    justify-content: space-between;
+    width: 50%;
     
     i {
         font-size: $font-size-xl;
@@ -86,13 +86,10 @@ a {
     background: transparent;
 }
 
-.broken {
+.highlight {
     color: $secondary-color !important;
 }
 
-.fix {
-    color: rgb(58, 170, 58);
-}
 
 
 

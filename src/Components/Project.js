@@ -16,8 +16,8 @@ export default function Project(props) {
                     >
                         {
                         !props.broken ? 
-                        <p className="error-button"><i class="fa-solid fa-triangle-exclamation broken"></i> Break Everything</p> :
-                        <p className="error-button"><i className="fa-solid fa-wrench fix"></i> Fix everything</p>
+                        <p className="error-button highlight"><i class="fa-solid fa-triangle-exclamation highlight"></i> Break Everything</p> :
+                        <p className="error-button"><i className="fa-solid fa-wrench"></i> Fix everything</p>
                         }
                     </button>
                 </div>

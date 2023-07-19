@@ -28,7 +28,7 @@ export default function ProjectLayout(props) {
                 style={({isActive}) => isActive ? activeHostLinkStyle : null}
                 > 
                     <img className="thumbnail" src={project.img} alt="" />   
-                    <p> <i className={ `fa-solid ${!props.broken ? project.icon : "fa-triangle-exclamation broken"}`}></i> {project.name}</p>          
+                    <p> <i className={ `fa-solid ${!props.broken ? project.icon : "fa-triangle-exclamation highlight"}`}></i> {project.name}</p>          
                 </NavLink>
         )
     })

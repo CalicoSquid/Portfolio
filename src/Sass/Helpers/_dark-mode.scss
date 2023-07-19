@@ -4,8 +4,9 @@
     background-color: $accent-color;
     color: $primary-color;
 
-    .description {
-        color: $accent-color;
+    .about-head {
+        padding: $base-padding * 2;
+        background: hsla(0, 4%, 27%, 0.5);
     }
 
     .toggle {
@@ -19,4 +20,6 @@
         }
         
     }
+
+
 }

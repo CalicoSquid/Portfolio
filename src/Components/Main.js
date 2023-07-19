@@ -1,7 +1,7 @@
-import Logos from "./Logos"
-import avatar from "../Images/avatar.png"
-import { getProjects } from "../api"
-import { useLoaderData, Link } from "react-router-dom"
+import Logos from "./Logos";
+import avatar from "../Images/avatar.png";
+import { getProjects } from "../api";
+import { useLoaderData, Link } from "react-router-dom";
 
 export function loader() {
     const data = getProjects()
@@ -13,16 +13,10 @@ export default function Main(props) {
     const cardArray = useLoaderData();
 
     const projects = cardArray.map(project => {
-        const icon = 
-        project.type === "Game" ?
-        "fa-gamepad" :
-        project.type === "Webapp" ?
-        "fa-code" :
-        "fa-earth-americas"
 
         return (
             <Link 
-            to={`projects/${project.id}`}
+            to={ `projects/${project.id}` }
             className="card" 
             >
                 <img 
@@ -30,7 +24,7 @@ export default function Main(props) {
                     src={project.img} 
                     alt="project frontpage"
                 />
-                <i className={ `fa-solid ${!props.broken ? icon : "fa-triangle-exclamation broken front"}`}></i>
+                <i className={ `fa-solid ${ !props.broken ? project.icon : "fa-triangle-exclamation highlight" }`}></i>
             </Link>
         )
     })
@@ -42,7 +36,17 @@ export default function Main(props) {
                     <div className="info-text">
                         <h1>Caleb Mow</h1>
                         <h3>Front End Developer</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, nemo corrupti aspernatur ullam quam explicabo doloribus deleniti adipisci cupiditate!</p>
+                        <p>
+                        Welcome to my portfolio!
+                        <br/>
+                        I'm Caleb, a dedicated front-end developer with a passion for crafting dynamic web experiences using <span className="highlight">React</span>.
+                        <br/>
+                        With a strong foundation in <span className="highlight">HTML</span>, <span className="highlight">CSS</span>, and <span className="highlight">Javascript</span>, I strive to create clean and intuitive user interfaces that blend creativity and functionality.
+                        <br/>
+                        Whether it's building <span className="highlight">responsive websites</span> or optimizing performance, I'm driven by a constant desire to learn and improve.
+                        <br/>
+                        Let's collaborate and bring your ideas to life!
+                        </p>
                         <br/>
                         <div className="intro-links">
                             <Link to="/contact" className="scroller">
@@ -58,7 +62,7 @@ export default function Main(props) {
                             </a>
                         </div> 
                     </div>
-                    <img src={avatar} className="profile-pic" alt="" />
+                    <img src={ avatar } className="profile-pic" alt="" />
                 </div>
                 
                 <div className="stack flex justify-center">

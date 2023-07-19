@@ -9,9 +9,9 @@ export default function About() {
 
             <section className="about-head flex ">
                 <div className="info-head flex column justify-flex-start">
-                    <h1>CalicoSquid</h1>
+                    <h1 className="highlight">CalicoSquid</h1>
                     <h2>About Me</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quis reiciendis quasi aperiam expedita.</p>
+                    <p>Grinding to full stack on a mountain in Montenegro...</p>
                     <Link to="/projects">My Work</Link>
                 </div>
                 <img 
@@ -26,11 +26,12 @@ export default function About() {
                 <div className="textbox">
                     <h2>More about me</h2>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quae, omnis impedit ratione quam rem, illo nam veritatis debitis explicabo natus dolores perspiciatis neque recusandae unde aspernatur corrupti hic. Necessitatibus.
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quae, omnis impedit ratione quam rem, illo nam veritatis debitis explicabo natus dolores perspiciatis neque recusandae unde aspernatur corrupti hic. Necessitatibus.
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quae, omnis impedit ratione quam rem, illo nam veritatis debitis explicabo natus dolores perspiciatis neque recusandae unde aspernatur corrupti hic. Necessitatibus.
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quae, omnis impedit ratione quam rem, illo nam veritatis debitis explicabo natus dolores perspiciatis neque recusandae unde aspernatur corrupti hic. Necessitatibus.
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quae, omnis impedit ratione quam rem, illo nam veritatis debitis explicabo natus dolores perspiciatis neque recusandae unde aspernatur corrupti hic. Necessitatibus.
+                    Hello! I'm Caleb, an American-British front-end developer based in beautiful Montenegro.<br/>
+                    From exploring the stunning landscapes to conquering new heights through hiking and rock climbing, I find inspiration in the outdoors.<br/>
+                    When I'm not casting a line in the tranquil waters for a relaxing fishing session, you'll often find me immersed in the world of code, bringing ideas to life through frontend development with a focus on React.<br/>
+                    What started as a hobby has evolved into a deep passion, and I'm thrilled to be pursuing a career change at the age of 36 to make coding my full-time pursuit.<br/>
+                    Combining my years of coding experience with a creative mindset, I'm committed to creating engaging and user-centric web experiences.<br/>
+                    Let's collaborate and build something remarkable together!<br/>
                     </p>
                 </div>
                 

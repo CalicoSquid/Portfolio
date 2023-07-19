@@ -1,18 +1,17 @@
 
 .info-page {
-    gap: 4rem;
+    width: 100%;
+    gap: 0 !important;
 
     .about-head {
         width: 50%;
-        margin: 3rem;
+        padding: $base-padding * 2;
+        background: hsla(0, 1%, 74%, 0.5);
+        backdrop-filter: blur(0.7rem);
+
 
         .info-head {
             align-items: flex-start;
-
-            h1 {
-                font-size: $font-size-xxl;
-                color: $secondary-color;
-            }
 
             p {
                 line-height: 1.5em;;
@@ -24,26 +23,45 @@
             padding: $base-padding;
             border-radius: $base-border-radius;
             box-shadow: $base-box-shadow;
+            border: 2px solid $yellow-theme;
+            color: $accent-color;
+            font-weight: 700;
 
             &:hover {
-                color: white;
                 background-color: $accent-color;
-                text-decoration: none;
+                color: $primary-color;
+                border: 2px solid $secondary-color;
+
             }
         }
     }
+
     .description {
         background: $blue-theme;
-        box-shadow: $base-box-shadow;
+        width: 100%;
+        min-height: 400px;
+        background-image: url("../../Images/mountains.png");
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .textbox {
         width: 50%;
-        padding-block: $base-padding * 2;
+        min-height: 400px;
+        padding: $base-padding * 2;
         line-height: 1.5em;
+        font-size: $base-font-size * 1.1;
+        color: black;
+        background: hsla(0, 7%, 92%, 0.5);
+        backdrop-filter: blur(1rem);
         
         h2 {
             margin-bottom: $base-margin;
         }
+    }
+
+    .logo-container {
+        width: 50%;
+        justify-content: space-between;
     }
 }

@@ -63,12 +63,12 @@ a {
         border: 3px solid $accent-color;
         border-radius: $base-border-radius;
         color: $secondary-color;
-        border: 3px solid $blue-theme;
-        background-color: white;
+        border: 3px solid $secondary-color;
+        background-color: #252b31;
 
         &:hover {
             animation: borderColors 0.5s steps(1) forwards;
-            color: $blue-theme;
+            color: $yellow-theme;
         }
     }
 }

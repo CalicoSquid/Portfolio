@@ -9,8 +9,8 @@ export default function About() {
 
             <section className="about-head flex ">
                 <div className="info-head flex column justify-flex-start">
-                    <h1 className="highlight">CalicoSquid</h1>
-                    <h2>About Me</h2>
+                    <h1 className="highlight">Caleb Mow</h1>
+                    <h2>Calico Squid Code</h2>
                     <p>Grinding to full stack on a mountain in Montenegro...</p>
                     <Link className="border-animation" to="/projects">My Work</Link>
                 </div>

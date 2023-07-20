@@ -5,14 +5,13 @@
     .contact-head {
         width: 50%;   
         padding: $base-padding * 2;
-        //border: 1px solid blue;
 
         .contact-head-text {     
               line-height: 1.4rem;
         }
 
         img {
-            max-width: 50%;
+            max-width: 40%;
         }
 
         .contact-link {
@@ -44,27 +43,11 @@
         }
 
         .submit {
-            background-color: $accent-color;
-            padding: $base-padding;
-            font-size: $base-font-size;
-            border: 3px solid $secondary-color;
-            border-radius: $base-border-radius;
-            box-shadow: $base-box-shadow;
-            cursor: pointer;
-            color: $primary-color;
-            transform: scale(1, 0.8);
-    
-            &:focus,
-            &:hover {
-            animation: borderColors 0.5s steps(1) forwards;
-            }
-
-
+            @include fancy-button;
         }
     }
 
     .logo-container {
-        //border: 1px solid blue;
         width: 50%;
         justify-content: space-between;
         padding: $base-padding * 2;

@@ -19,25 +19,9 @@
         }
 
         a {
-                background-color: $accent-color;
-                padding: $base-padding;
-                font-size: $base-font-size;
-                border: 3px solid $secondary-color;
-                border-radius: $base-border-radius;
-                box-shadow: $base-box-shadow;
-                cursor: pointer;
-                color: $primary-color;
-                transform: scale(1, 0.8);
-        
-                &:focus,
-                &:hover {
-                animation: borderColors 0.5s steps(1) forwards;
-                font-weight: 600;
-                }
-            
+            @include fancy-button;
         }
     }
-
     .description {
         background: $blue-theme;
         width: 100%;

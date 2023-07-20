@@ -21,3 +21,21 @@ $layout-values: flex-start, flex-end, center, space-around, space-between;
     }
 }
 
+@mixin fancy-button {
+    background-color: $accent-color;
+    padding: $base-padding;
+    font-size: $base-font-size;
+    border: 3px solid $secondary-color;
+    border-radius: $base-border-radius;
+    box-shadow: $base-box-shadow;
+    cursor: pointer;
+    color: $primary-color;
+    transform: scale(1, 0.8);
+        
+    &:focus,
+    &:hover {
+    animation: borderColors 0.5s steps(1) forwards;
+    font-weight: 600;
+    }
+}
+

@@ -24,12 +24,12 @@ export default function Contact(props) {
                     <br/>
 
                     <div className="contact-link flex ">
-                        <i class="fa-brands fa-whatsapp"></i>
+                        <i class="fa-brands fa-whatsapp highlight"></i>
                         {" "}
                         +382 063242695
                     </div>
                     <div className=" contact-link flex justify-flex-start">
-                        <i class="fa-regular fa-envelope"></i> 
+                        <i class="fa-regular fa-envelope highlight"></i> 
                         {" "}
                         <p 
                         onClick={() =>  navigator.clipboard.writeText('calicosquidcode@gmail.com')}

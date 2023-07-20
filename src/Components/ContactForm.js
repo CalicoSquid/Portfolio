@@ -1,7 +1,7 @@
 import { useState } from "react"
 export default function ContactForm() {
 
-    const [status, setStatus] = useState("")
+    const [status, setStatus] = useState("Send")
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -62,6 +62,7 @@ export default function ContactForm() {
             name="email" 
             id="text"
             className="input"
+            required
             />
 
             <label htmlFor="message">Message <i className="fa-solid fa-arrow-right-long highlight"></i></label>
@@ -76,7 +77,7 @@ export default function ContactForm() {
 
             {
                 status !== "Submit" ?
-                <input type="submit" value="Send" className="border-animation submit" /> :
+                <input type="submit" value={status} className="border-animation submit" /> :
                 <p>Thank you<span className="highlight"> !</span></p>
             }
 

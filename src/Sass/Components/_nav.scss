@@ -19,10 +19,14 @@
 footer {
     width: 100%;
     color: $primary-color;
-    background-color: #363636;
-    background-image: url("../../Images/code.png");
+    background-color: $accent-color;
+    background-image: url("../../Images/code-bg.png");
     background-repeat: no-repeat;
     background-position: -110px;
     text-align: center;
-    padding: $base-padding;
+    padding-block: $base-padding;
+
+    p {
+        background-color: $accent-color;
+    }
 }

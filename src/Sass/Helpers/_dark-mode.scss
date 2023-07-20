@@ -21,5 +21,32 @@
         
     }
 
+    .skill-card {
+        box-shadow: $dark-mode-box-shadow;
+    }
+
+    .stack {
+        background-image: url("../../Images/code-bg.png");
+    }
+
+
+    .logo-container {
+
+        i {
+            font-size: $font-size-xl;
+            padding-inline: $base-padding;
+            padding-block: $base-padding / 2;
+            border: 3px solid $accent-color;
+            border-radius: $base-border-radius;
+            color: $secondary-color;
+            border: 3px solid $secondary-color;
+            background-color: #252b31;
+    
+            &:hover {
+                animation: borderColors 0.5s steps(1) forwards;
+                color: $blue-theme;
+            }
+        }
+    }
 
 }

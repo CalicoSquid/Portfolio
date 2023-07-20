@@ -10,15 +10,10 @@ $secondary-color: #F04B54;
 $accent-color: #303841;
 $blue-theme: #30BFBF;
 $yellow-theme: #F2C230;
-$error-color: #d32752;
-$info-color: #f6c31c;
-
 
 $colors: (
   "primary": $primary-color,
   "secondary": $secondary-color,
-  "error": $error-color,
-  "info": $info-color,
   "blue": #1919e6,
   "red": #e61919,
   "yellow": #e6e619,
@@ -31,8 +26,8 @@ $colors: (
 );
 
 //Font Families
-$primary-font: "Lato", Tahoma, sans-serif;
-$title-font: "Raleway", Tahoma, sans-serif;
+$primary-font: "Raleway", "Lato", Tahoma, sans-serif;
+$title-font: "Lato", Tahoma, sans-serif;
 
 //Spacing
 $base-padding: 1em;

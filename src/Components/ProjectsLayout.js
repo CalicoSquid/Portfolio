@@ -32,6 +32,7 @@ export default function ProjectLayout(props) {
                 </NavLink>
         )
     })
+    .reverse()
 
     const homeLink = <NavLink 
                     to={"/projects"} 

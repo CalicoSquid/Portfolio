@@ -164,8 +164,19 @@
         width: 80% !important;
     }
 
-    .contact-head, .logo-container {
-        width: 80% !important;
+    .contact-page {
+
+        .contact-head, .logo-container, .form {
+            width: 80% !important;
+            //border: 1px solid red;
+    
+            img {
+                display: none;
+            }
+        }
+
     }
+
+    
 }
 

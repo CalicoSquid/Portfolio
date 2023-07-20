@@ -62,14 +62,13 @@ a {
         padding-block: $base-padding / 2;
         border: 3px solid $accent-color;
         border-radius: $base-border-radius;
-        color: $yellow-theme;
-        border: 3px solid $secondary-color;
-        background-color: $accent-color;
+        color: $secondary-color;
+        border: 3px solid $blue-theme;
+        background-color: white;
 
         &:hover {
-            background-color: #252b31;
-            border: 3px solid $secondary-color;
-            color: $yellow-theme;
+            animation: borderColors 0.5s steps(1) forwards;
+            color: $blue-theme;
         }
     }
 }
@@ -77,7 +76,6 @@ a {
 .thumbnail {
     width: 100px;
     height: 100px;
-
 }
 
 .break-everything {
@@ -88,6 +86,7 @@ a {
 
 .highlight {
     color: $secondary-color !important;
+    font-weight: 600;
 }
 
 

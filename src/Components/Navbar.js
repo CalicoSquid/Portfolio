@@ -1,6 +1,6 @@
 
 import { NavLink } from "react-router-dom";
-import laptop from "../Images/contact.png";
+import avatar from "../Images/avatar.png";
 import ClickAwayListener from '@mui/base/ClickAwayListener';
 
 
@@ -14,7 +14,7 @@ export default function Navbar(props) {
         <nav className="navbar flex justify-space-between">
             <div className="header">
                 <NavLink to="/">
-                    <img src={laptop} style={{height: "50px"}} alt=""/>
+                    <img src={avatar} style={{height: "50px"}} alt=""/>
                 </NavLink>
             </div>
             

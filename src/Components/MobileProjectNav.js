@@ -1,9 +1,13 @@
 import { Link, useLocation } from "react-router-dom"
+import { useState, useEffect } from "react"
 import arrow from "../Images/arrow3.png"
 
 export default function MobileNav(props) {
 
   const currentPage = useLocation().pathname
+  const [image, setImage] = useState("")
+  const [leftArrow, setLeftArrow] = useState(".")
+  const [rightArrow, setRightArrow] = useState(".")
  
   const linkArray = props.projectData.map(project => {
     return {
@@ -12,16 +16,18 @@ export default function MobileNav(props) {
       }
   })
 
+  useEffect(() => {
+    setImage(linkArray[currentIndex].img)
+    setLeftArrow(linkArray[prevIndex].to)
+    setRightArrow(linkArray[nextIndex].to)
+  })
+
+
   linkArray.unshift({to: "/projects", img: props.image});
 
   const currentIndex = linkArray.findIndex(x => x.to === currentPage)
-
   const nextIndex = currentIndex !== (linkArray.length - 1) ? currentIndex + 1 : currentIndex;
   const prevIndex = currentIndex !== 0 ? currentIndex - 1 : currentIndex;
-
-  const rightArrow = linkArray[nextIndex].to
-  const leftArrow = linkArray[prevIndex].to
-  const image = linkArray[currentIndex].img
 
   return (
     <nav className="mobile-nav flex justify-center">

@@ -1,0 +1,29 @@
+
+  
+  @keyframes borderColors {
+    0% {
+      border-top-color: $secondary-color;
+      border-right-color: $secondary-color;
+      border-bottom-color: $secondary-color;
+      border-left-color: $secondary-color;
+    }
+    33% {
+      border-top-color: $yellow-theme;
+      border-right-color: $secondary-color;
+      border-bottom-color: $secondary-color;
+      border-left-color: $secondary-color;
+  
+    }
+    66% {
+      border-top-color: $yellow-theme;
+      border-right-color: $yellow-theme;
+      border-bottom-color: $secondary-color;
+      border-left-color: $yellow-theme;
+    }
+    100% {
+      border-top-color: $yellow-theme;
+      border-right-color: $yellow-theme;
+      border-bottom-color: $yellow-theme;
+      border-left-color: $yellow-theme;
+    }
+  }

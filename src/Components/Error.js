@@ -25,7 +25,7 @@ export default function Error(props) {
                         <br/>
                         
                      
-                        <h3 onClick={props.breakEverything} className="fixit"><i className="fa-solid fa-arrow-up-long"></i> Fix Everything</h3>
+                        {props.broken && <h3 onClick={props.breakEverything} className="fixit"><i className="fa-solid fa-arrow-up-long"></i> Fix Everything</h3>}
                         <Link 
                         to=".." 
                         path="relative" 

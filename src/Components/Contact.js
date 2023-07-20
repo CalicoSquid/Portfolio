@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom"
-import Logos from "./Logos"
-import laptopLight from "../Images/laptop-light.png"
-import laptopDark from "../Images/laptop.png"
-
+import { Link } from "react-router-dom";
+import Logos from "./Logos";
+import laptopLight from "../Images/laptop-light.png";
+import laptopDark from "../Images/laptop.png";
+import ContactForm from "./ContactForm";
 
 export default function Contact(props) {
     return (
@@ -10,12 +10,12 @@ export default function Contact(props) {
             
             <div className="contact-head flex justify-center">
                 <div className="contact-head-text">
-                    <h1>&lt;Contact/&gt;</h1>
+                    <h1>Contact Me</h1>
                     <br/>
                     <p>
                         Thanks for stopping by checking out my portfolio. 
                         <br/>
-                        Please feel free to get in touch by phone or email, browse my repo's or check out 
+                        Please feel free to get in touch by phone or email, fill in the contact form below, or check out 
                         {" "}
                         <Link to="/projects" className="highlight">my current projects</Link> 
                         {" "}
@@ -40,6 +40,7 @@ export default function Contact(props) {
                 <img src={props.darkMode ? laptopDark : laptopLight} className="contact-image" style={{width: "60%"}} alt=""/>
             </div>
 
+            <ContactForm />
             
             <Logos />
             

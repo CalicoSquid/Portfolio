@@ -22,11 +22,7 @@ export default function Project(props) {
                     </button>
                 </div>
             
-                <img 
-                className="project-image" 
-                src={projects} 
-                alt="project frontpage"
-                />
+                
             </div>
         
         </div>

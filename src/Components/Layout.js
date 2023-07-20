@@ -15,7 +15,7 @@ export default function Layout(props) {
         isMobile={props.isMobile}
         />
         <Outlet />
-        <footer>Ⓒ 2023 CalicoSquid Code</footer>
+        <footer className="flex justify-center"><p>Ⓒ 2023 CalicoSquid Code</p></footer>
     </div>
     )
 }

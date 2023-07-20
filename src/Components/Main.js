@@ -2,6 +2,7 @@ import Logos from "./Logos";
 import avatar from "../Images/avatar.png";
 import { getProjects } from "../api";
 import { useLoaderData, Link } from "react-router-dom";
+import {react, css, html, js, scss, git, node, psql, jquery, python, d3, mongodb, redux, nextjs, angular} from "../Images/Icons/icons"
 
 export function loader() {
     const data = getProjects()
@@ -11,6 +12,9 @@ export function loader() {
 export default function Main(props) {
 
     const cardArray = useLoaderData();
+    const styles = {
+        height: "40px"
+    }
 
     const projects = cardArray.map(project => {
 
@@ -31,7 +35,8 @@ export default function Main(props) {
 
     return (
         <div className="main flex column justify-space-around">
-            <section className="intro flex column justify-space-around">
+            
+            <section className="intro flex column justify-center">
                 <div className="section-container main-info flex justify-center">
                     <div className="info-text">
                         <h1>Caleb Mow</h1>
@@ -49,12 +54,20 @@ export default function Main(props) {
                         </p>
                         <br/>
                         <div className="intro-links">
+                            <Link to="/about" className="scroller">
+                                Bio
+                                {" "}
+                                <i className="fa-solid fa-arrow-right-long"></i>
+                            </Link>
+                            <br/>
+                        
                             <Link to="/contact" className="scroller">
                                 Contact 
                                 {" "}
                                 <i className="fa-solid fa-arrow-right-long"></i>
                             </Link>
                             <br/>
+                            
                             <a href="#projects" className="scroller">
                                 Projects 
                                 {" "}
@@ -64,24 +77,50 @@ export default function Main(props) {
                     </div>
                     <img src={ avatar } className="profile-pic" alt="" />
                 </div>
-                
-                <div className="stack flex justify-center">
-                    <div className="flex">
-                        <p>Html</p>
-                        <p>Javascript</p>
-                        <p>Css</p>
+            </section>
+
+            <div className="stack"></div>
+
+            <section className="skills flex justify-center">
+                <div className="section-container cards skill-section grid">
+                    <div className="skill-card flex column">
+                        <h2>Current Stack</h2>
+                        <ul>
+                            <li className="flex"><img src={react} style={styles} /> React</li>
+                            
+                            <li className="flex"><img src={js} style={styles} /> Javascript</li>
+                            <li className="flex"><img src={html} style={styles} /> Html</li>
+                            <li className="flex"><img src={css} style={styles} /> CSS</li>
+                            <li className="flex"><img src={scss} style={styles} /> SASS</li>
+                            <li className="flex"><img src={git} style={styles} /> git</li>
+                        </ul>
                     </div>
-                    <div className="flex">
-                        <p>React</p>
-                        <p>Sass</p>
-                        <p>Git</p>
+                    <div className="skill-card flex column">
+                        <h2>Working on it</h2>
+                        <ul>
+                            <li className="flex"> <img src={node} style={styles} /> Node.js</li>
+                            <li className="flex"> <img src={psql} style={styles} /> PostgreSQL</li>
+                            <li className="flex"> <img src={jquery} style={styles} /> Jquery</li>
+                            <li className="flex"> <img src={python} style={styles} /> Python</li>
+                            <li className="flex"> <img src={d3} style={styles} /> D3</li>
+                            <li className="flex"> <img src={mongodb} style={styles} /> MongoDB</li>
+                        </ul>
+                    </div>
+                    <div className="skill-card flex column">
+                        <h2>Next up</h2>
+                        <ul>
+                            <li className="flex"><img src={redux} style={styles} /> Redux</li>
+                            <li className="flex"><img src={nextjs} style={styles} /> Next JS</li>
+                            <li className="flex"><img src={angular} style={styles} /> Angular</li>
+                        </ul>
                     </div>
                 </div>
             </section>
 
+            <div className="stack flip"></div>
 
             <section className="projects flex column justify-center" id="projects">
-                <h1>&lt;Projects/&gt;</h1>
+                <h1>Projects</h1>
                 <div className="section-container cards grid">
                     {projects}
                 </div>

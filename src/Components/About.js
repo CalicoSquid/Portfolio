@@ -12,7 +12,7 @@ export default function About() {
                     <h1 className="highlight">CalicoSquid</h1>
                     <h2>About Me</h2>
                     <p>Grinding to full stack on a mountain in Montenegro...</p>
-                    <Link to="/projects">My Work</Link>
+                    <Link className="border-animation" to="/projects">My Work</Link>
                 </div>
                 <img 
                     src={squid} 

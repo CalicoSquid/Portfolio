@@ -4,6 +4,8 @@
     box-sizing: border-box;
     font-family: $primary-font;
     scroll-behavior:smooth;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
 
 .App {
@@ -88,6 +90,29 @@ a {
     color: $secondary-color !important;
     font-weight: 600;
 }
+
+.red {
+    background-color: $secondary-color;
+}
+
+.blue {
+    background-color: $blue-theme;
+}
+
+.yellow {
+    background-color: $yellow-theme;
+}
+
+.img-holder {
+    height: 120px;
+    width: 120px;
+}
+
+
+
+
+
+
 
 
 

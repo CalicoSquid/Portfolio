@@ -44,10 +44,7 @@
 
 
     .stack {
-
-        p {
-           display: none;
-        }
+        margin-top: 4em;
     }
 
     .thumbnail {
@@ -98,29 +95,14 @@
         }
     }
 
-    .contact-page {
-
-        .contact-head {
-            flex-direction: column-reverse;
-            align-items: center;
-
-            img {
-                min-width: 200px;
-            }
-            
-        }
-    
-    }
-
     .project-page {
-        padding: $base-padding;
+        //padding: $base-padding;
 
         .project-container {
             flex-direction: column;
 
             .project-text {
                 justify-content: flex-start;
-                height: auto;
             }
             
             .lang-box {
@@ -134,23 +116,17 @@
     }
 
     .project-image {
-        //width: 80% !important;  
         max-width: 400px !important;
-        //align-self: center;
     }
 
-    .cards {
-        width: 60%;
+    .canvas-wrapper {
+        display: none;
     }
 }
 
 
 
 @include breakpoint-min(60em) {
-
-    .stack {
-        justify-content: flex-end !important;
-    }
 
     .logo-container {
         justify-content: center;
@@ -168,15 +144,12 @@
 
         .contact-head, .logo-container, .form {
             width: 80% !important;
-            //border: 1px solid red;
-    
+        
             img {
                 display: none;
             }
         }
 
     }
-
-    
 }
 

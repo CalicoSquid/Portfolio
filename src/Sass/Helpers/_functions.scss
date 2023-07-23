@@ -39,3 +39,13 @@ $layout-values: flex-start, flex-end, center, space-around, space-between;
     }
 }
 
+@each $key, $val in $colors {
+  @for $i from 1 through 9 {
+    .bg-hover-#{$key}-dark-#{$i} {
+      &:hover {
+          background-color: mix(black, $val, $i * 10)
+      }
+    }
+  }
+  
+}

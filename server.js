@@ -9,11 +9,17 @@ app.use(express.json());
 app.use("/", router);
 app.listen(5000, () => console.log("Server Running"));
 
+require('dotenv').config();
+
+const pw = process.env.EMAILPW
+const email = process.env.EMAILADDRESS
+
+
 const contactEmail = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: "calicosquidcode@gmail.com",
-      pass: "yzgmgjddmhoxbvjs",
+      user: email,
+      pass: pw
     },
   });
   
@@ -25,7 +31,7 @@ const contactEmail = nodemailer.createTransport({
     }
   });
 
-  
+
   router.post("/contact", (req, res) => {
     const name = req.body.name;
     const email = req.body.email;

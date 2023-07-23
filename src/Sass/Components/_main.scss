@@ -8,11 +8,13 @@
     }
 }
 
+
 .intro {
     width: 80%;
     min-height: 80vh;
 
     .section-container {
+        position: relative;
 
         .info-text {
             width: 40%;
@@ -47,7 +49,9 @@
             
     img {
         max-height: 20rem;
+        border-radius: 50%;
     }
+
 
 }
 
@@ -79,7 +83,6 @@
     .skill-card {
         padding: $base-padding;
         box-shadow: $base-box-shadow;
-        //max-width: 300px;
 
         li {
             margin: $base-margin;
@@ -113,9 +116,8 @@
 
         .card {
             height: 300px;
-            
-            //border: 1px solid red;
             position: relative;
+            
 
             img {
                 height: 300px;
@@ -128,6 +130,34 @@
                 left: 5px;
             }
     
+        }
+
+        .card2 {
+            padding: $base-padding;
+            color: white;
+            border-radius: $base-border-radius;
+            font-family: Lato;
+            color: #000;
+
+            i {
+                font-size: 30px;
+                background-color: #252b31;
+                border-radius: 50%;
+                padding: $base-padding / 2;
+                color: white;
+            }
+
+            .lang {
+
+
+                p {
+                    font-size: $font-size-sm;
+                    border-radius: $base-border-radius;
+                    background-color: #252b31;
+                    padding: 0.5rem;
+                    color: white;
+                }
+            }
         }
 
     }

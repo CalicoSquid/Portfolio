@@ -3,6 +3,8 @@ import avatar from "../Images/avatar.png";
 import { getProjects } from "../api";
 import { useLoaderData, Link } from "react-router-dom";
 import {react, css, html, js, scss, git, node, psql, jquery, python, d3, mongodb, redux, nextjs, angular} from "../Images/Icons/icons"
+import Canvas from "./Canvas"
+
 
 export function loader() {
     const data = getProjects()
@@ -12,26 +14,26 @@ export function loader() {
 export default function Main(props) {
 
     const cardArray = useLoaderData();
+    const colorArray = ["yellow", "blue", "red"]
     const styles = {
         height: "40px"
     }
 
-    const projects = cardArray.map(project => {
-
+    const projects = cardArray.map((project, i) => {
         return (
             <Link 
             to={ `projects/${project.id}` }
-            className="card" 
+            className={`card2 flex column justify-space-between bg-hover-${colorArray[i]}-dark-1 ${colorArray[i]}`}
             >
-                <img 
-                    className="project-image" 
-                    src={project.img} 
-                    alt="project frontpage"
-                />
                 <i className={ `fa-solid ${ !props.broken ? project.icon : "fa-triangle-exclamation highlight" }`}></i>
+                <h2>{project.name}</h2>
+                <p>{project.description}</p>
+                <div className="lang flex">{project.language.map(x => <p>{x}</p>)}</div>
             </Link>
         )
-    })
+    }).reverse()
+
+    
 
     return (
         <div className="main flex column justify-space-around">
@@ -73,15 +75,25 @@ export default function Main(props) {
                                 {" "}
                                 <i className="fa-solid fa-arrow-down-long"></i>
                             </a>
+
+                            
                         </div> 
                     </div>
+
+                    <Canvas />
+                    
                     <img src={ avatar } className="profile-pic" alt="" />
+                    
+                    
+                    
+                    
                 </div>
             </section>
 
             <div className="stack"></div>
 
-            <section className="skills flex justify-center">
+            <section className="skills flex column justify-center">
+                <h1>Skills</h1>
                 <div className="section-container cards skill-section grid">
                     <div className="skill-card flex column">
                         <h2>Current Stack</h2>
@@ -126,11 +138,10 @@ export default function Main(props) {
                 </div>
             </section>
 
-            <section className="contact">
-                <div className="section-container flex column">  
-                    <Logos />
-                </div>
-            </section>
+            
+
+            <Logos />
+
         </div>
     )
 }

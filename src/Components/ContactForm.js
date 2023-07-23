@@ -29,9 +29,14 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
         });
 
-        setStatus("Submit");
         let result = await response.json();
-        console.log(result.status);
+
+        if (result.status === "Message Sent") {
+            setStatus("submitted");
+        } else {
+            setStatus("Try Again");
+        }
+        //console.log(result.status);
 
         setFormData({
             name: "",
@@ -76,7 +81,7 @@ export default function ContactForm() {
             />
 
             {
-                status !== "Submit" ?
+                status !== "submitted" ?
                 <input type="submit" value={status} className="border-animation submit" /> :
                 <p>Thank you<span className="highlight"> !</span></p>
             }

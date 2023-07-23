@@ -11,23 +11,17 @@ $accent-color: #303841;
 $blue-theme: #30BFBF;
 $yellow-theme: #F2C230;
 
+
 $colors: (
   "primary": $primary-color,
-  "secondary": $secondary-color,
-  "blue": #1919e6,
-  "red": #e61919,
-  "yellow": #e6e619,
-  "green": #19e635,
-  "orange": #ffa600,
-  "purple": #9900ff,
-  "gray": #808080,
-  "black": black,
-  "white": white,
+  "red": $secondary-color,
+  "blue": $blue-theme,
+  "yellow": $yellow-theme,
 );
 
 //Font Families
-$primary-font: "Raleway", "Lato", Tahoma, sans-serif;
-$title-font: "Lato", Tahoma, sans-serif;
+$primary-font:  "Lato", Tahoma, sans-serif;
+$title-font: "Raleway", "Lato", Tahoma, sans-serif;
 
 //Spacing
 $base-padding: 1em;

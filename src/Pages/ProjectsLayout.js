@@ -1,7 +1,7 @@
 import { Outlet, NavLink, useLoaderData } from "react-router-dom";
 import { getProjects } from "../api";
 import projects from "../Images/projects.png"
-import MobileNav from "./MobileProjectNav";
+import MobileNav from "../Components/MobileProjectNav";
 
 export function loader() {
     const data = getProjects()

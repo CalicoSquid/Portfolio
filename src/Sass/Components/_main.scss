@@ -20,7 +20,7 @@
             width: 40%;
 
             h1 {
-                margin-bottom: $base-margin / 3;
+                margin-bottom: math.div($base-margin, 3);
             }
 
             h3 {
@@ -114,41 +114,20 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
         justify-content: center;
 
-        .card {
-            height: 300px;
-            position: relative;
-            
-
-            img {
-                height: 300px;
-                max-width: 300px;
-            }
-
-            i {
-                position: absolute;
-                bottom: 15px;
-                left: 5px;
-            }
-    
-        }
-
         .card2 {
             padding: $base-padding;
-            color: white;
             border-radius: $base-border-radius;
-            font-family: Lato;
             color: #000;
 
             i {
                 font-size: 30px;
                 background-color: #252b31;
                 border-radius: 50%;
-                padding: $base-padding / 2;
+                padding: math.div($base-padding, 2);
                 color: white;
             }
 
             .lang {
-
 
                 p {
                     font-size: $font-size-sm;

@@ -1,9 +1,9 @@
-import Logos from "./Logos";
+import Logos from "../Components/Logos";
 import avatar from "../Images/avatar.png";
 import { getProjects } from "../api";
 import { useLoaderData, Link } from "react-router-dom";
 import {react, css, html, js, scss, git, node, psql, jquery, python, d3, mongodb, redux, nextjs, angular} from "../Images/Icons/icons"
-import Canvas from "./Canvas"
+import Canvas from "../Components/Canvas"
 
 
 export function loader() {
@@ -98,32 +98,31 @@ export default function Main(props) {
                     <div className="skill-card flex column">
                         <h2>Current Stack</h2>
                         <ul>
-                            <li className="flex"><img src={react} style={styles} /> React</li>
-                            
-                            <li className="flex"><img src={js} style={styles} /> Javascript</li>
-                            <li className="flex"><img src={html} style={styles} /> Html</li>
-                            <li className="flex"><img src={css} style={styles} /> CSS</li>
-                            <li className="flex"><img src={scss} style={styles} /> SASS</li>
-                            <li className="flex"><img src={git} style={styles} /> git</li>
+                            <li className="flex"><img src={react} style={styles} alt=""/> React</li>                       
+                            <li className="flex"><img src={js} style={styles} alt=""/> Javascript</li>
+                            <li className="flex"><img src={html} style={styles} alt=""/> Html</li>
+                            <li className="flex"><img src={css} style={styles} alt=""/> CSS</li>
+                            <li className="flex"><img src={scss} style={styles} alt=""/> SASS</li>
+                            <li className="flex"><img src={git} style={styles} alt=""/> git</li>
                         </ul>
                     </div>
                     <div className="skill-card flex column">
                         <h2>Working on it</h2>
                         <ul>
-                            <li className="flex"> <img src={node} style={styles} /> Node.js</li>
-                            <li className="flex"> <img src={psql} style={styles} /> PostgreSQL</li>
-                            <li className="flex"> <img src={jquery} style={styles} /> Jquery</li>
-                            <li className="flex"> <img src={python} style={styles} /> Python</li>
-                            <li className="flex"> <img src={d3} style={styles} /> D3</li>
-                            <li className="flex"> <img src={mongodb} style={styles} /> MongoDB</li>
+                            <li className="flex"> <img src={node} style={styles} alt=""/> Node.js</li>
+                            <li className="flex"> <img src={psql} style={styles} alt=""/> PostgreSQL</li>
+                            <li className="flex"> <img src={jquery} style={styles} alt=""/> Jquery</li>
+                            <li className="flex"> <img src={python} style={styles} alt=""/> Python</li>
+                            <li className="flex"> <img src={d3} style={styles} alt=""/> D3</li>
+                            <li className="flex"> <img src={mongodb} style={styles} alt=""/> MongoDB</li>
                         </ul>
                     </div>
                     <div className="skill-card flex column">
                         <h2>Next up</h2>
                         <ul>
-                            <li className="flex"><img src={redux} style={styles} /> Redux</li>
-                            <li className="flex"><img src={nextjs} style={styles} /> Next JS</li>
-                            <li className="flex"><img src={angular} style={styles} /> Angular</li>
+                            <li className="flex"><img src={redux} style={styles} alt=""/> Redux</li>
+                            <li className="flex"><img src={nextjs} style={styles} alt=""/> Next JS</li>
+                            <li className="flex"><img src={angular} style={styles} alt=""/> Angular</li>
                         </ul>
                     </div>
                 </div>

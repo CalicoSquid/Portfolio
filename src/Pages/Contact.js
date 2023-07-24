@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import Logos from "./Logos";
+import Logos from "../Components/Logos";
 import laptopLight from "../Images/laptop-light.png";
 import laptopDark from "../Images/laptop.png";
-import ContactForm from "./ContactForm";
+import ContactForm from "../Components/ContactForm";
 
 export default function Contact(props) {
     return (

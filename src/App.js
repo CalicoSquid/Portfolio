@@ -2,11 +2,11 @@
 import './Sass/index.scss';
 import { useState, useEffect } from 'react';
 import {RouterProvider, createBrowserRouter, createRoutesFromElements, Route} from "react-router-dom";
-import Main, {loader as cardLoader} from './Components/Main';
+import Main, {loader as cardLoader} from './Pages/Main';
 import Layout from './Components/Layout';
-import About from './Components/About';
-import Contact from './Components/Contact';
-import ProjectLayout, {loader as navLoader} from './Components/ProjectsLayout';
+import About from './Pages/About';
+import Contact from './Pages/Contact';
+import ProjectLayout, {loader as navLoader} from './Pages/ProjectsLayout';
 import ProjectDetails, { loader as projectLoader } from './Components/ProjectDetails';
 import Project from './Components/Project';
 import NotFound from './Components/NotFound';
@@ -28,14 +28,20 @@ function App() {
 
   function breakEverything() {
     setBroken(prev => !prev)
+    console.log(broken)
   }
 
   function toggleNav() { 
     setShowNav(prev => !prev) 
+    console.log(showNav)
+    console.log(width)
   }
 
   function closeNav() {
-    setShowNav(false)
+    if (showNav) {
+      setShowNav(false)
+    }
+    //
   }
 
 
@@ -62,7 +68,11 @@ function App() {
           toggleNav={toggleNav}
           isMobile={isMobile}
         />}
-        errorElement={<Error breakEverything={breakEverything}/>}
+        errorElement={
+        <Error 
+          breakEverything={breakEverything}
+          broken={broken}
+        />}
       >
 
         <Route 
@@ -94,7 +104,7 @@ function App() {
             broken={broken}
             isMobile={isMobile}
           /> }
-          errorElement={<Error breakEverything={breakEverything}/>}
+          errorElement={<Error breakEverything={breakEverything} broken={broken}/>}
           loader= {navLoader}
         >
           <Route 
@@ -107,7 +117,7 @@ function App() {
             path=":id" 
             element={ <ProjectDetails broken={broken} />} 
             loader={projectLoader} 
-            errorElement={<Error breakEverything={breakEverything}/>}
+            errorElement={<Error breakEverything={breakEverything} broken={broken}/>}
           />
         </Route>
 

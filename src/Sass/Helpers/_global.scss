@@ -61,7 +61,7 @@ a {
     i {
         font-size: $font-size-xl;
         padding-inline: $base-padding;
-        padding-block: $base-padding / 2;
+        padding-block: math.div($base-padding, 2);
         border: 3px solid $accent-color;
         border-radius: $base-border-radius;
         color: $secondary-color;
@@ -70,7 +70,7 @@ a {
 
         &:hover {
             animation: borderColors 0.5s steps(1) forwards;
-            color: $yellow-theme;
+            color: $blue-theme;
         }
     }
 }
@@ -88,7 +88,6 @@ a {
 
 .highlight {
     color: $secondary-color !important;
-    font-weight: 600;
 }
 
 .red {

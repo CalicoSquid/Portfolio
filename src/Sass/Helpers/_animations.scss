@@ -1,5 +1,5 @@
 
-  
+  //Fancy button :-)
   @keyframes borderColors {
     0% {
       border-top-color: $secondary-color;
@@ -25,5 +25,15 @@
       border-right-color: $yellow-theme;
       border-bottom-color: $yellow-theme;
       border-left-color: $yellow-theme;
+    }
+  }
+
+  // Project page slider
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
     }
   }

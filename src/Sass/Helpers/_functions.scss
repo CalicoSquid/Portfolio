@@ -1,26 +1,13 @@
 $layout-values: flex-start, flex-end, center, space-around, space-between;
 
-// base layout classes
-.container {
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.row {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 1rem;
-}
-
 //Justify content classes 
-
 @each $val in $layout-values {
     .justify-#{$val} {
         justify-content: $val;
     }
 }
 
+//Fancy boy
 @mixin fancy-button {
     background-color: $accent-color;
     padding: $base-padding;
@@ -39,13 +26,13 @@ $layout-values: flex-start, flex-end, center, space-around, space-between;
     }
 }
 
+//Darken on hover
 @each $key, $val in $colors {
   @for $i from 1 through 9 {
     .bg-hover-#{$key}-dark-#{$i} {
       &:hover {
-          background-color: mix(black, $val, $i * 10)
+          background-color: mix(black, $val, $i * 10%)
       }
     }
-  }
-  
+  } 
 }

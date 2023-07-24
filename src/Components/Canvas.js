@@ -1,16 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import arrow from "../Images/arrow.png"
 
 export default function Canvas() {
-    const [mouseData, setMouseData] = useState({  });
+    const [mouseData, setMouseData] = useState({ });
     const canvasRef = useRef(null);
     const [canvasCTX, setCanvasCTX] = useState(null);
     const [color, setColor] = useState("#30BFBF");
     const [size, setSize] = useState(10);
-    const [showControls, setShowControls] = useState({
-        width: 0,
-        opacity: 0
-    })
+    const [showControls, setShowControls] = useState(0)
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -21,9 +17,7 @@ export default function Canvas() {
     }, [canvasRef]);
 
     const showDraw = () => {
-        setShowControls(prev => {
-            return prev.width === 0 ? {width: 320, opacity: 1} : {width: 0, opacity: 0} 
-        })
+        setShowControls(prev => !prev ? 1 : 0)
     }
 
     const SetPos = (e) => {
@@ -44,93 +38,61 @@ export default function Canvas() {
         ctx.lineWidth = size;
  
         ctx.lineCap = "round";
-        ctx.stroke();
-      
+        ctx.stroke();  
     };
 
 
 
     return (
-            <div className="canvas-wrapper" style={{position: "relative" }}>
+            <div className="canvas-wrapper" style={{ position: "relative" }}>
                 <canvas
-                className="canvas"
-                ref={canvasRef}
-                onMouseMove={(e) => SetPos(e)}
-                onMouseDown={(e) => SetPos(e)}
-            >
-                
-            </canvas>
-            <div 
-            className="draw-text flex " 
-            style={{
-                    position: "absolute",
-                    top: "-230px",
-                    left: "100px",
-                    width: "320px", 
-                }}>
+                    className="canvas"
+                    ref={canvasRef}
+                    onMouseMove={(e) => SetPos(e)}
+                    onMouseDown={(e) => SetPos(e)}
+                ></canvas>
+
+                <div className="draw-text flex justify-center">
                     <p>Make me smile!</p>
                     <i class="fa-solid fa-pencil" onClick={showDraw}></i>
-            </div>
-            
-            <div 
-            className="controls-wrapper flex justify-center"
-            style={{
-                position: "absolute",
-                bottom: "-225px",
-                left: "30px",
-                width: "320px", 
-                height: "50px",
-            }}
-            >
-
-
-            <div
-                className="controlpanel flex justify-space-around"
-                style={{
-                    width: `${showControls.width}px`, 
-                    opacity: `${showControls.opacity}`
-                }}
-            >   
-                    <input
-                    type="range"
-                    value={size}
-                    max={40}
-                    onChange={(e) => {
-                    setSize(e.target.value);
-                    }}
-                    
-                />
-                <small className="control-text">{size}</small>
-                <input
-                    type="color"
-                    className="color-picker"
-                    style={{backgroundColor: `${color}`}}
-                    value={color}
-                    onChange={(e) => {
-                    setColor(e.target.value);
-                    }}
-                />
-                <small className="control-text">{color}</small> 
-                <button
-                    onClick={() => {
-                        const ctx = canvasCTX;
-                        ctx.clearRect(
-                            0,
-                            0,
-                            canvasRef.current.width,
-                            canvasRef.current.height
-                        );
-                    }}
-                >
-                
-                <i className="fa-solid fa-rotate-left highlight"></i>
-                </button>
                 </div>
-                  
-                
-                
-            </div>
             
-            </div>
+                <div
+                    className="controlpanel flex justify-space-around"
+                    style={{ opacity: `${showControls}`}}
+                >   
+                    <input
+                        type="range"
+                        value={size}
+                        max={40}
+                        onChange={(e) => setSize(e.target.value)}
+                    />
+                    <small className="control-text">{size}</small>
+
+                    <input
+                        type="color"
+                        className="color-picker"
+                        style={{backgroundColor: `${color}`}}
+                        value={color}
+                        onChange={(e) => setColor(e.target.value)}
+                    />
+                    <small className="control-text">{color}</small> 
+
+                    <button
+                        onClick={() => {
+                            const ctx = canvasCTX;
+                            ctx.clearRect(
+                                0,
+                                0,
+                                canvasRef.current.width,
+                                canvasRef.current.height
+                            );
+                        }}
+                    >
+                
+                    <i className="fa-solid fa-rotate-left highlight"></i>
+                    </button>
+                </div>  
+            </div>    
     );
 }

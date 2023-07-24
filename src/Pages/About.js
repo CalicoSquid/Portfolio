@@ -1,7 +1,7 @@
 import squid from "../Images/code.png";
 
 import { Link } from "react-router-dom";
-import Logos from "./Logos"
+import Logos from "../Components/Logos"
 
 export default function About() {
     return (

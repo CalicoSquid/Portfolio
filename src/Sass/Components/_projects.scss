@@ -6,8 +6,6 @@
     a {
         text-align: center;
     }
-
-   
 }
 
 
@@ -52,7 +50,7 @@
             font-size: $font-size-sm;
             border: 2px solid $secondary-color;
             padding-inline: $base-padding;
-            padding-block: $base-padding / 2;
+            padding-block: math.div($base-padding, 2);
             border-radius: $base-border-radius;
             color: $yellow-theme;
             background-color: $accent-color;
@@ -65,7 +63,6 @@
 
 .project-image {
    max-height: 300px;
-   //min-height: 300px;
 }
 
 .project-page {
@@ -76,24 +73,14 @@
     }
 }
 
-@keyframes slideInFromLeft {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
+.mobile-nav {
+  .arrows {
+      gap: 0.5rem;
+      padding: $base-padding;
+      
+      .hide {
+          color: transparent;
+      }
   }
-
-  .mobile-nav {
-
-    .arrows {
-        gap: 0.5rem;
-        padding: $base-padding;
-
-        .hide {
-            color: transparent;
-        }
-    }
-  }
+}
 

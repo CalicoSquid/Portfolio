@@ -1,7 +1,7 @@
 import { Outlet, NavLink, useLoaderData } from "react-router-dom";
-import { getProjects } from "../api";
-import projects from "../Images/projects.png"
+import { getProjects } from "../Utils/api";
 import MobileNav from "../Components/MobileProjectNav";
+import Error from "../Components/Error";
 
 export function loader() {
     const data = getProjects()
@@ -9,15 +9,15 @@ export function loader() {
 }
 
 export default function ProjectLayout(props) {
-
-    const projectData = useLoaderData()
+    const data = useLoaderData();
+    const projectData = data.error ? [] : data
+    const colorArray = ["yellow", "yellow", "red", "blue"];
 
     const activeHostLinkStyle = {
         borderTop: `10px solid transparent`
     }
 
-
-    const navLinks = projectData.map(project => {
+    const navLinks = projectData.map((project, i) => {
 
         return (
                 <NavLink 
@@ -27,40 +27,31 @@ export default function ProjectLayout(props) {
                 end 
                 style={({isActive}) => isActive ? activeHostLinkStyle : null}
                 > 
-                    <img className="thumbnail" src={project.img} alt="" />   
-                    <p> <i className={ `fa-solid ${!props.broken ? project.icon : "fa-triangle-exclamation highlight"}`}></i> {project.name}</p>          
+                    <div className={`card2 flex column justify-space-between bg-hover-${colorArray[i]}-dark-1 ${colorArray[i]}`}>
+                    <i className={ `fa-solid ${project.icon}`}></i>
+                    <h2>{project.name}</h2>
+                    </div>
+                          
                 </NavLink>
         )
-    })
-    .reverse()
-
-    const homeLink = <NavLink 
-                    to={"/projects"} 
-                    end 
-                    className="project-link"
-                    style={({isActive}) => isActive ? activeHostLinkStyle : null}> 
-                        <img className="thumbnail" src={projects} alt=""/>                  
-                        <p>Home</p>
-                    </NavLink>
-
+    }).reverse()
+    let first = navLinks.splice(2, 1)[0]; 
+    navLinks.unshift(first)
 
     return (
         <div className="project-page">
             {!props.isMobile ?
             <nav className="project-nav flex justify-center">       
-                {homeLink}
                 {navLinks}    
             </nav>    
             
             :
 
             <MobileNav 
-            projectData={projectData} 
-            image={projects} 
-            home={homeLink}
+            projectData={projectData}  
             />}
 
-            <Outlet/>
+            {data.error ? <Error error={data.error}/> : <Outlet/>}
         </div>
     )
 }

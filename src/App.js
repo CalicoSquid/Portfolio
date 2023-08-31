@@ -41,7 +41,6 @@ function App() {
     if (showNav) {
       setShowNav(false)
     }
-    //
   }
 
 

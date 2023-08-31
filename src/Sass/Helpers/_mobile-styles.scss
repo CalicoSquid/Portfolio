@@ -92,9 +92,12 @@
     }
 
     .project-page {
+        
 
         .project-container {
             flex-direction: column;
+            width: 90%;
+            height: 700px;
 
             .project-text {
                 justify-content: flex-start;
@@ -108,13 +111,26 @@
 
     .logo-container {
         justify-content: center !important;
+        
     }
 
     .project-image {
-        max-width: 400px !important;
+        max-width: 100% !important;
     }
 
     .canvas-wrapper {
+        display: none;
+    }
+
+    .loading {
+        height: 700px;
+    }
+
+    .about-logos {
+        width: 80% !important;
+    }
+
+    .contact-img {
         display: none;
     }
 }
@@ -122,6 +138,10 @@
 
 
 @include breakpoint-min(60em) {
+
+    .about-logos {
+        width: 80% !important;
+    }
 
     .stack {
         margin-top: 4em;

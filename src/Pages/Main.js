@@ -1,23 +1,21 @@
 import Logos from "../Components/Logos";
 import avatar from "../Images/avatar.png";
-import { getProjects } from "../api";
+import { getProjects } from "../Utils/api";
 import { useLoaderData, Link } from "react-router-dom";
-import {react, css, html, js, scss, git, node, psql, jquery, python, d3, mongodb, redux, nextjs, angular} from "../Images/Icons/icons"
 import Canvas from "../Components/Canvas"
-
+import SkillColumn from "../Components/SkillColumn";
+import Error from "../Components/Error";
+import { currentStackSkills, workingOnItSkills, nextUpSkills } from "../Utils/skills"
 
 export function loader() {
     const data = getProjects()
     return data
 }
 
-export default function Main(props) {
-
-    const cardArray = useLoaderData();
-    const colorArray = ["yellow", "blue", "red"]
-    const styles = {
-        height: "40px"
-    }
+export default function Main({broken}) {
+    const data = useLoaderData()
+    const cardArray = data.error ? [] : data; 
+    const colorArray = ["yellow", "yellow", "red", "blue"];
 
     const projects = cardArray.map((project, i) => {
         return (
@@ -25,7 +23,7 @@ export default function Main(props) {
             to={ `projects/${project.id}` }
             className={`card2 flex column justify-space-between bg-hover-${colorArray[i]}-dark-1 ${colorArray[i]}`}
             >
-                <i className={ `fa-solid ${ !props.broken ? project.icon : "fa-triangle-exclamation highlight" }`}></i>
+                <i className={ `fa-solid ${ !broken ? project.icon : "fa-triangle-exclamation highlight" }`}></i>
                 <h2>{project.name}</h2>
                 <p>{project.description}</p>
                 <div className="lang flex">{project.language.map(x => <p>{x}</p>)}</div>
@@ -33,6 +31,8 @@ export default function Main(props) {
         )
     }).reverse()
 
+    let first = projects.splice(2, 1)[0]; 
+    projects.unshift(first)
     
 
     return (
@@ -84,9 +84,6 @@ export default function Main(props) {
                     
                     <img src={ avatar } className="profile-pic" alt="" />
                     
-                    
-                    
-                    
                 </div>
             </section>
 
@@ -95,36 +92,9 @@ export default function Main(props) {
             <section className="skills flex column justify-center">
                 <h1>Skills</h1>
                 <div className="section-container cards skill-section grid">
-                    <div className="skill-card flex column">
-                        <h2>Current Stack</h2>
-                        <ul>
-                            <li className="flex"><img src={react} style={styles} alt=""/> React</li>                       
-                            <li className="flex"><img src={js} style={styles} alt=""/> Javascript</li>
-                            <li className="flex"><img src={html} style={styles} alt=""/> Html</li>
-                            <li className="flex"><img src={css} style={styles} alt=""/> CSS</li>
-                            <li className="flex"><img src={scss} style={styles} alt=""/> SASS</li>
-                            <li className="flex"><img src={git} style={styles} alt=""/> git</li>
-                        </ul>
-                    </div>
-                    <div className="skill-card flex column">
-                        <h2>Working on it</h2>
-                        <ul>
-                            <li className="flex"> <img src={node} style={styles} alt=""/> Node.js</li>
-                            <li className="flex"> <img src={psql} style={styles} alt=""/> PostgreSQL</li>
-                            <li className="flex"> <img src={jquery} style={styles} alt=""/> Jquery</li>
-                            <li className="flex"> <img src={python} style={styles} alt=""/> Python</li>
-                            <li className="flex"> <img src={d3} style={styles} alt=""/> D3</li>
-                            <li className="flex"> <img src={mongodb} style={styles} alt=""/> MongoDB</li>
-                        </ul>
-                    </div>
-                    <div className="skill-card flex column">
-                        <h2>Next up</h2>
-                        <ul>
-                            <li className="flex"><img src={redux} style={styles} alt=""/> Redux</li>
-                            <li className="flex"><img src={nextjs} style={styles} alt=""/> Next JS</li>
-                            <li className="flex"><img src={angular} style={styles} alt=""/> Angular</li>
-                        </ul>
-                    </div>
+                    <SkillColumn title="Current Stack" skills={currentStackSkills} />
+                    <SkillColumn title="Working on it" skills={workingOnItSkills} />
+                    <SkillColumn title="Next up..." skills={nextUpSkills} />
                 </div>
             </section>
 
@@ -132,12 +102,10 @@ export default function Main(props) {
 
             <section className="projects flex column justify-center" id="projects">
                 <h1>Projects</h1>
-                <div className="section-container cards grid">
-                    {projects}
-                </div>
+                {cardArray.length > 0 ? <div className="section-container cards grid">
+                    {projects} 
+                </div> : <Error error={data.error}/>} 
             </section>
-
-            
 
             <Logos />
 

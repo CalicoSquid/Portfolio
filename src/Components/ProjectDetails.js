@@ -1,9 +1,10 @@
 
 import { useLoaderData, defer, Await } from "react-router-dom";
 import { Suspense } from "react";
-import { getProject } from "../api"
+import { getProject } from "../Utils/api"
 import Loading from "./Loading";
-
+import Pushers
+ from "./Pushers";
 export function loader({ params }) {
     const { id } = params
     const data = getProject(id)
@@ -20,6 +21,7 @@ export default function ProjectDetails(props) {
             return (
                 <div className="project-page justify-center flex">
                     <div className="project-container flex justify-center">
+                        <Pushers />
                         <div className="project-text flex column justify-space-between">
                                 <div>
                                     <h1>{project.name}</h1>                  
@@ -60,7 +62,6 @@ export default function ProjectDetails(props) {
     return (
         <Suspense fallback={<Loading />}>
                 <Await resolve={projectPromise.data}>
-                    
                     {
                     !props.broken ?
                     renderProject :

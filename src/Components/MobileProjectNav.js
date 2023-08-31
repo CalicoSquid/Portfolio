@@ -6,24 +6,30 @@ export default function MobileNav(props) {
 
   const currentPage = useLocation().pathname
   const [image, setImage] = useState("")
+  const [icon, setIcon] = useState("")
+  const [color, setColor] = useState("")
   const [leftArrow, setLeftArrow] = useState(".")
   const [rightArrow, setRightArrow] = useState(".")
+  const colorArray = ["yellow", "yellow", "red", "blue"];
  
-  const linkArray = props.projectData.map(project => {
+  const linkArray = props.projectData.map((project, i) => {
     return {
       to: `/projects/${project.to}`,
-      img: project.img
+      img: project.img,
+      name: project.name,
+      icon: project.icon,
+      color: colorArray[i]
       }
   })
 
   useEffect(() => {
-    setImage(linkArray[currentIndex].img)
+    setImage(linkArray[currentIndex].name)
+    setIcon(linkArray[currentIndex].icon)
+    setColor(linkArray[currentIndex].color)
     setLeftArrow(linkArray[prevIndex].to)
     setRightArrow(linkArray[nextIndex].to)
   })
 
-
-  linkArray.unshift({to: "/projects", img: props.image});
 
   const currentIndex = linkArray.findIndex(x => x.to === currentPage)
   const nextIndex = currentIndex !== (linkArray.length - 1) ? currentIndex + 1 : currentIndex;
@@ -40,11 +46,10 @@ export default function MobileNav(props) {
         alt=""/>
         <p className={currentIndex === 0 ? "hide" : ""}>Previous</p>
       </Link>
-      <img 
-      src={image} 
-      style={{height: "100px"}} 
-      alt=""
-      />
+      <div className={`card3 flex column justify-space-between bg-hover-${color}-dark-1 ${color}`}>
+                    <i className={ `fa-solid ${icon}`}></i>
+                    <h2>{image}</h2>
+                    </div>
       <Link 
       className="arrows flex column" 
       to={rightArrow} >

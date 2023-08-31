@@ -66,7 +66,7 @@ a {
         border-radius: $base-border-radius;
         color: $secondary-color;
         border: 3px solid $secondary-color;
-        background-color: #252b31;
+        background-color: $accent-color;
 
         &:hover {
             animation: borderColors 0.5s steps(1) forwards;

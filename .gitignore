@@ -18,7 +18,12 @@
 .env.development.local
 .env.test.local
 .env.production.local
-Randomtodelete.js
+to-do.txt
+
+# Firebase
+functions
+.firebaserc
+firebase.json
 
 npm-debug.log*
 yarn-debug.log*

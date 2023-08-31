@@ -39,7 +39,25 @@ export default function Canvas() {
  
         ctx.lineCap = "round";
         ctx.stroke();  
+
+        const replicaCanvas = document.querySelector(".replica-canvas");
+        const replicaCtx = replicaCanvas.getContext("2d");
+        replicaCtx.clearRect(0, 0, replicaCanvas.width, replicaCanvas.height);
+        replicaCtx.drawImage(canvasRef.current, 0, 0, replicaCanvas.width, replicaCanvas.height);
     };
+
+    
+  const clearCanvas = () => {
+    const ctx = canvasCTX;
+
+    // Clear the main canvas
+    ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+
+    // Clear the replica canvas
+    const replicaCanvas = document.querySelector(".replica-canvas");
+    const replicaCtx = replicaCanvas.getContext("2d");
+    replicaCtx.clearRect(0, 0, replicaCanvas.width, replicaCanvas.height);
+  };
 
 
 
@@ -79,15 +97,7 @@ export default function Canvas() {
                     <small className="control-text">{color}</small> 
 
                     <button
-                        onClick={() => {
-                            const ctx = canvasCTX;
-                            ctx.clearRect(
-                                0,
-                                0,
-                                canvasRef.current.width,
-                                canvasRef.current.height
-                            );
-                        }}
+                        onClick={clearCanvas}
                     >
                 
                     <i className="fa-solid fa-rotate-left highlight"></i>

@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import avatar from "../Images/avatar.png";
 import ClickAwayListener from '@mui/base/ClickAwayListener';
 
-
 export default function Navbar(props) {
 
     const activeLinkStyle = {   
@@ -14,7 +13,10 @@ export default function Navbar(props) {
         <nav className="navbar flex justify-space-between">
             <div className="header">
                 <NavLink to="/">
+                    <div className="avatar-container">
                     <img src={avatar} style={{height: "50px"}} alt=""/>
+                    <canvas className="replica-canvas"></canvas>
+                    </div>
                 </NavLink>
             </div>
             
@@ -41,7 +43,7 @@ export default function Navbar(props) {
                 </NavLink>
 
                 <NavLink 
-                to="projects" 
+                to="projects/savor" 
                 className="link" 
                 onClick={props.isMobile ? props.toggleNav : null}
                 style={({isActive}) => isActive ? activeLinkStyle : null}
@@ -58,7 +60,7 @@ export default function Navbar(props) {
                 Contact
                 </NavLink>
 
-                <button 
+                {/*<button 
                     className="dark-mode-toggle" 
                     onClick={props.toggle}
                 >
@@ -68,7 +70,7 @@ export default function Navbar(props) {
                     :
                     <i className="fa-solid fa-moon toggle"></i>
                      }
-                </button>
+                    </button>*/}
             </div>
             </ClickAwayListener>
             } 

@@ -1,10 +1,13 @@
 
 .contact-page {
     width: 100%;
+    gap: 0 !important;
 
     .contact-head {
         width: 50%;   
         padding: $base-padding * 2;
+        background: hsla(0, 4%, 27%, 0.5);
+        backdrop-filter: blur(1rem);
 
         .contact-head-text {     
               line-height: 1.4rem;
@@ -29,6 +32,8 @@
         padding: $base-padding * 2;
         width: 50%;
         align-items: flex-start;
+        background: hsla(0, 4%, 27%, 0.5);
+        backdrop-filter: blur(1rem);
 
         .input {
             width: 50%;
@@ -52,5 +57,7 @@
         justify-content: space-between;
         padding: $base-padding * 2;
         margin: 0;
+        background: hsla(0, 4%, 27%, 0.5);
+        backdrop-filter: blur(1rem);
     }
 }

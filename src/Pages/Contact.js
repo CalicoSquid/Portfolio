@@ -10,14 +10,14 @@ export default function Contact(props) {
             
             <div className="contact-head flex justify-center">
                 <div className="contact-head-text">
-                    <h1>Contact Me</h1>
+                    <h1><i class="fa-solid fa-address-card contact-img highlight"></i>  Contact Me</h1>
                     <br/>
                     <p>
                         Thanks for stopping by checking out my portfolio. 
                         <br/>
                         Please feel free to get in touch by phone or email, fill in the contact form below, or check out 
                         {" "}
-                        <Link to="/projects" className="highlight">my current projects</Link> 
+                        <Link to="/projects/savor"  className="highlight">my current projects</Link> 
                         {" "}
                         here.
                     </p>

@@ -12,7 +12,7 @@ export default function About() {
                     <h1 className="highlight">Caleb Mow</h1>
                     <h2>Calico Squid Code</h2>
                     <p>Grinding to full stack on a mountain in Montenegro...</p>
-                    <Link className="border-animation" to="/projects">My Work</Link>
+                    <Link className="border-animation" to="/projects/savor">My Work</Link>
                 </div>
                 <img 
                     src={squid} 
@@ -26,17 +26,22 @@ export default function About() {
                 <div className="textbox">
                     <h2>More about me</h2>
                     <p>
-                    Hello! I'm Caleb, an American-British front-end developer based in beautiful Montenegro.<br/>
-                    From exploring the stunning landscapes to conquering new heights through hiking and rock climbing, I find inspiration in the outdoors.<br/>
-                    When I'm not casting a line in the tranquil waters for a relaxing fishing session, you'll often find me immersed in the world of code, bringing ideas to life through frontend development with a focus on React.<br/>
-                    What started as a hobby has evolved into a deep passion, and I'm thrilled to be pursuing a career change at the age of 36 to make coding my full-time pursuit.<br/>
-                    Combining my years of coding experience with a creative mindset, I'm committed to creating engaging and user-centric web experiences.<br/>
+                    Hello! I'm Caleb, an American-British aspiring front-end developer based in the stunning seaside country of Montenegro<br/>
+                    I have always found inspiration in the outdoors, so when i am not glued to a screen writing code, you can almost always find me hiking up mountains, rock climbing, swimming or fishing.<br/>
+                    As a former professional chef, I have spent most of my life travelling the world, and now am focusing on bringing my ideas to life through frontend development, with a focus on React.<br/>
+                    I have had a facination with programming and code for as long as i can remember, and what began as a hobby in my spare time has evolved into a deep passion. <br/> 
+                    I'm thrilled to be pursuing a career change at the young age of 36 to make coding my full-time pursuit.<br/>
+                    Combining my years of coding experience with the creative mindset forged in the (literal) fires of a professional kitchen, I'm committed to creating engaging and user-centric web experiences with a personal touch.<br/>
                     Let's collaborate and build something remarkable together!<br/>
                     </p>
                 </div>
                 
             </section>
-            <Logos />
+
+            <section className="about-logos flex justify-center">
+                <Logos />
+            </section>
+            
 
             
         </div>

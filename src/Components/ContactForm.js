@@ -21,7 +21,7 @@ export default function ContactForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         setStatus("Sending...");
-        let response = await fetch("http://localhost:5000/contact", {
+        let response = await fetch("https://portfolio-email-server-ei5k.onrender.com/contact", {
         method: "POST",
         headers: {
             "Content-Type": "application/json;charset=utf-8",

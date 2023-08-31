@@ -3,6 +3,22 @@
     padding-inline: $base-padding;
     padding-bottom: 2rem;
 
+    .card2 {
+        padding: $base-padding;
+        border-radius: $base-border-radius;
+        box-shadow: $dark-mode-box-shadow;
+        color: #000;
+        width: 120px;
+
+        i {
+            font-size: 30px;
+            background-color: #252b31;
+            border-radius: 50%;
+            padding: math.div($base-padding, 2);
+            color: white;
+        }
+    }
+
     a {
         text-align: center;
     }
@@ -11,10 +27,15 @@
 
 
 .project-container  {
+    box-shadow: $dark-mode-box-shadow;
     animation: 1s ease-out 0s 1 slideInFromLeft;
     align-items: flex-start !important;
     padding: $base-padding * 2;
     margin-block: 2em;
+    height: 500px;
+    background-color: #252b31;
+    max-width: 90%;
+    position: relative;
 
     .project-text {
         max-width: 500px;
@@ -63,6 +84,7 @@
 
 .project-image {
    max-height: 300px;
+   box-shadow: $dark-mode-box-shadow;
 }
 
 .project-page {
@@ -82,5 +104,20 @@
           color: transparent;
       }
   }
+
+  .card3 {
+    padding: $base-padding;
+    border-radius: $base-border-radius;
+    color: #000;
+    width: 120px;
+
+    i {
+        font-size: 30px;
+        background-color: #252b31;
+        border-radius: 50%;
+        padding: math.div($base-padding, 2);
+        color: white;
+    }
+}
 }
 

@@ -6,27 +6,31 @@
     .toggle-nav {
         display: none;
     }
-
-    .dark-mode-toggle {
-        background: transparent;
-        font-size: $font-size-xl;
-        margin-left: 10px;
-        color: $blue-theme;
-    }
 }
 
 // Footer
 footer {
     width: 100%;
-    color: $primary-color;
-    background-color: $accent-color;
     background-image: url("../../Images/code-bg.png");
     background-repeat: no-repeat;
     background-position: -110px;
     text-align: center;
     padding-block: $base-padding;
+    position: relative;
+
+    img {
+        position: absolute;
+        left: 0;
+        top: -28px;
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+    }
 
     p {
-        background-color: $accent-color;
+        background-color: $primary-color;
     }
 }

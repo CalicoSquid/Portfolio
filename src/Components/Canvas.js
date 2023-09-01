@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import arrow from "../Images/arrow.png"
 
 export default function Canvas() {
     const [mouseData, setMouseData] = useState({ });
@@ -6,7 +7,6 @@ export default function Canvas() {
     const [canvasCTX, setCanvasCTX] = useState(null);
     const [color, setColor] = useState("#30BFBF");
     const [size, setSize] = useState(10);
-    const [showControls, setShowControls] = useState(0)
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -15,10 +15,6 @@ export default function Canvas() {
         canvas.height = 320;
         setCanvasCTX(ctx);
     }, [canvasRef]);
-
-    const showDraw = () => {
-        setShowControls(prev => !prev ? 1 : 0)
-    }
 
     const SetPos = (e) => {
         const canvas = canvasRef.current;
@@ -72,12 +68,12 @@ export default function Canvas() {
 
                 <div className="draw-text flex justify-center">
                     <p>Make me smile!</p>
-                    <i class="fa-solid fa-pencil" onClick={showDraw}></i>
+                    <img src={arrow}/>
                 </div>
             
                 <div
                     className="controlpanel flex justify-space-around"
-                    style={{ opacity: `${showControls}`}}
+                    
                 >   
                     <input
                         type="range"

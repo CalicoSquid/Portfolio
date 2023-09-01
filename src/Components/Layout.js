@@ -1,21 +1,22 @@
 import { Outlet } from "react-router-dom"
 import Navbar from "./Navbar.js";
+import squid from "../Images/squid-white.png";
 
-
-export default function Layout(props) {
+export default function Layout({showNav, closeNav, toggleNav, isMobile}) {
 
     return (
     <div className="layout flex column justify-space-between">
         <Navbar 
-        toggle={props.toggle} 
-        darkMode={props.darkMode} 
-        showNav={props.showNav}
-        closeNav={props.closeNav}
-        toggleNav={props.toggleNav}
-        isMobile={props.isMobile}
+        showNav={showNav}
+        closeNav={closeNav}
+        toggleNav={toggleNav}
+        isMobile={isMobile}
         />
         <Outlet />
-        <footer className="flex justify-center"><p>Ⓒ 2023 CalicoSquid Code</p></footer>
+        <footer className="flex justify-center">
+            <img src={squid} style={{height: "50px"}} alt=""/>
+            <p>Ⓒ 2023 CalicoSquid Code</p>
+        </footer>
     </div>
     )
 }

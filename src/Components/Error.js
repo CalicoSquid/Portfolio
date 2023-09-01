@@ -4,7 +4,6 @@ import Pushers from "./Pushers";
 
 export default function Error(props) {
 
-    console.log(props.error)
     const error = useRouteError()
 
         return (

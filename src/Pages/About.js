@@ -1,5 +1,4 @@
-import squid from "../Images/code.png";
-
+import code from "../Images/code.png";
 import { Link } from "react-router-dom";
 import Logos from "../Components/Logos"
 
@@ -15,10 +14,9 @@ export default function About() {
                     <Link className="border-animation" to="/projects/savor">My Work</Link>
                 </div>
                 <img 
-                    src={squid} 
+                    src={code} 
                     style={{height: "350px"}} 
-                    alt="Calico cat logo" 
-                    className="calico"
+                    alt="" 
                 />
             </section>
 

@@ -3,15 +3,14 @@ import { useLoaderData, defer, Await } from "react-router-dom";
 import { Suspense } from "react";
 import { getProject } from "../Utils/api"
 import Loading from "./Loading";
-import Pushers
- from "./Pushers";
+
 export function loader({ params }) {
     const { id } = params
     const data = getProject(id)
     return defer({data})
 }
 
-export default function ProjectDetails(props) {
+export default function ProjectDetails({broken}) {
 
         const projectPromise = useLoaderData();
 
@@ -20,12 +19,13 @@ export default function ProjectDetails(props) {
 
             return (
                 <div className="project-page justify-center flex">
-                    <div className="project-container flex justify-center">
-                        <Pushers />
+                    <div className={`project-container justify-center flex`}>
+                        
                         <div className="project-text flex column justify-space-between">
                                 <div>
+                                    
                                     <h1>{project.name}</h1>                  
-                                    <h4><i className={`fa-solid ${project.icon}`}></i> {project.type}</h4>
+                                    <h4 className="highlight"><i className={`fa-solid ${project.icon}`}></i> {project.type}</h4>
                                     <br/>
                                     <p>{project.description}</p>
                                     <br/>
@@ -63,7 +63,7 @@ export default function ProjectDetails(props) {
         <Suspense fallback={<Loading />}>
                 <Await resolve={projectPromise.data}>
                     {
-                    !props.broken ?
+                    !broken ?
                     renderProject :
                     () => { throw ({message: "You broke everything!", status: 400, statusText: "Bad Request Error"}) }
                     }

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import avatar from "../Images/avatar.png";
 import ClickAwayListener from '@mui/base/ClickAwayListener';
 
-export default function Navbar(props) {
+export default function Navbar({toggleNav, showNav, closeNav, isMobile}) {
 
     const activeLinkStyle = {   
         color: "#F04B54",
@@ -23,20 +23,19 @@ export default function Navbar(props) {
             <button 
                 aria-controls="primary-nav" 
                 aria-expanded="false"
-                onClick={props.toggleNav}
+                onClick={toggleNav}
                 className="toggle-nav"
             >
                 <span className="sr-only">Menu</span>
-                <i className={`fa-solid ${props.showNav ? "fa-xmark" : "fa-bars"}`}/>                   
+                <i className={`fa-solid ${showNav ? "fa-xmark" : "fa-bars"}`}/>                   
             </button>
             
-            {(props.showNav || !props.isMobile) && 
-            <ClickAwayListener onClickAway={props.closeNav}>
+            {(showNav || !isMobile) && 
+            <ClickAwayListener onClickAway={closeNav}>
                 <div className="nav-links flex">
                 <NavLink 
                 to="about" 
                 className="link" 
-                //onClick={props.toggleNav}
                 style={({isActive}) => isActive ? activeLinkStyle : null}
                 >
                 About Me
@@ -45,7 +44,6 @@ export default function Navbar(props) {
                 <NavLink 
                 to="projects/savor" 
                 className="link" 
-                onClick={props.isMobile ? props.toggleNav : null}
                 style={({isActive}) => isActive ? activeLinkStyle : null}
                 >
                 Projects
@@ -54,23 +52,10 @@ export default function Navbar(props) {
                 <NavLink 
                 to="contact" 
                 className="link" 
-                //onClick={props.toggleNav}
                 style={({isActive}) => isActive ? activeLinkStyle : null}
                 >
                 Contact
                 </NavLink>
-
-                {/*<button 
-                    className="dark-mode-toggle" 
-                    onClick={props.toggle}
-                >
-                    {
-                    props.darkMode ?
-                    <i className="fa-solid fa-sun toggle"></i> 
-                    :
-                    <i className="fa-solid fa-moon toggle"></i>
-                     }
-                    </button>*/}
             </div>
             </ClickAwayListener>
             } 

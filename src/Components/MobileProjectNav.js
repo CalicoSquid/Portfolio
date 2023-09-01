@@ -2,9 +2,10 @@ import { Link, useLocation } from "react-router-dom"
 import { useState, useEffect } from "react"
 import arrow from "../Images/arrow3.png"
 
-export default function MobileNav(props) {
+export default function MobileNav({projectData}) {
 
   const currentPage = useLocation().pathname
+  
   const [image, setImage] = useState("")
   const [icon, setIcon] = useState("")
   const [color, setColor] = useState("")
@@ -12,7 +13,7 @@ export default function MobileNav(props) {
   const [rightArrow, setRightArrow] = useState(".")
   const colorArray = ["yellow", "yellow", "red", "blue"];
  
-  const linkArray = props.projectData.map((project, i) => {
+  const linkArray = projectData.map((project, i) => {
     return {
       to: `/projects/${project.to}`,
       img: project.img,
@@ -20,7 +21,10 @@ export default function MobileNav(props) {
       icon: project.icon,
       color: colorArray[i]
       }
-  })
+  }).reverse();
+
+  let first = linkArray.splice(2, 1)[0]; 
+  linkArray.unshift(first)
 
   useEffect(() => {
     setImage(linkArray[currentIndex].name)

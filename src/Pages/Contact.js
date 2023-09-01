@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import Logos from "../Components/Logos";
-import laptopLight from "../Images/laptop-light.png";
 import laptopDark from "../Images/laptop.png";
 import ContactForm from "../Components/ContactForm";
 
-export default function Contact(props) {
+export default function Contact() {
     return (
         <div className="contact-page flex column justify-space-between">
             
@@ -37,7 +36,7 @@ export default function Contact(props) {
                         >calicosquidcode@gmail.com</p>
                     </div>
                 </div>
-                <img src={props.darkMode ? laptopDark : laptopLight} className="contact-image" style={{width: "60%"}} alt=""/>
+                <img src={laptopDark} className="contact-image" style={{width: "60%"}} alt=""/>
             </div>
 
             <ContactForm />

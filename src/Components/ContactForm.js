@@ -36,7 +36,6 @@ export default function ContactForm() {
         } else {
             setStatus("Try Again");
         }
-        //console.log(result.status);
 
         setFormData({
             name: "",

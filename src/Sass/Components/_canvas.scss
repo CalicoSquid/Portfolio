@@ -4,7 +4,7 @@
     .canvas {
         border-radius: 50%;
         position: absolute;
-        top: -161px; 
+        top: -160px; 
         left: 16px;
         cursor: crosshair;
     } 
@@ -12,12 +12,27 @@
     .draw-text {
         position: absolute;
         top: -210px;
-        left: 17px;
+        left: 55px;
         width: 320px;
+        display: flex;
+        align-items: flex-start;
 
         p {
             font-family: 'Sue Ellen Francisco', cursive;
             font-size: $font-size-lrg;        
+        }
+
+        img {
+            margin: 7px;
+            height: 70px;
+            box-shadow: none;
+            transform: rotate(50deg);
+            -moz-transform: scaleX(-1);
+            -o-transform: scaleX(-1);
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1) rotate(50deg);
+            filter: FlipH;
+            -ms-filter: "FlipH";
         }
 
         i {
@@ -37,13 +52,13 @@
 
     .controlpanel {
         padding: math.div($base-padding, 2);
-        box-shadow: $base-box-shadow;
+        //box-shadow: $base-box-shadow;
         border-radius: $base-border-radius;
         transition: opacity 0.5s;
         position:absolute;
         bottom: -210px;
-        width: 20rem;
-        left: 17px;
+        width: 17rem;
+        left: 50px;
         height: 40px;
 
         small {

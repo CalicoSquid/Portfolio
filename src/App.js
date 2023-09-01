@@ -16,25 +16,17 @@ import Error from './Components/Error';
 
 function App() {
 
-  const [toggle, setToggle] = useState(true)
   const [broken, setBroken] = useState(false)
   const [width, setWidth] = useState(window.innerWidth);
   const [showNav, setShowNav] = useState(false)
   const isMobile = width <= 640;
 
-  function toggleDarkLight() {
-    setToggle(prev => !prev)
-  }
-
   function breakEverything() {
     setBroken(prev => !prev)
-    console.log(broken)
   }
 
   function toggleNav() { 
     setShowNav(prev => !prev) 
-    console.log(showNav)
-    console.log(width)
   }
 
   function closeNav() {
@@ -44,13 +36,12 @@ function App() {
   }
 
 
-    useEffect(() => {
-        window.addEventListener('resize', () => setWidth(window.innerWidth));
-
-        return () => { 
-            window.removeEventListener('resize', () => setWidth(window.innerWidth));
-        }
-    }, []);
+  useEffect(() => {
+      window.addEventListener('resize', () => setWidth(window.innerWidth));
+      return () => { 
+          window.removeEventListener('resize', () => setWidth(window.innerWidth));
+      }
+  }, []);
 
   
 
@@ -60,8 +51,6 @@ function App() {
       <Route 
         element={
         <Layout 
-          toggle={toggleDarkLight} 
-          darkMode={toggle}
           showNav={showNav}
           closeNav={closeNav}
           toggleNav={toggleNav}
@@ -89,8 +78,7 @@ function App() {
 
         <Route 
           path="contact" 
-          element={ <Contact 
-          darkMode={toggle}/>} 
+          element={ <Contact />} 
           errorElement={<Error />}
         />
         
@@ -98,7 +86,6 @@ function App() {
           path="projects" 
           element={
           <ProjectLayout 
-            darkMode={toggle} 
             breakEverything={breakEverything}
             broken={broken}
             isMobile={isMobile}
@@ -120,7 +107,7 @@ function App() {
           />
         </Route>
 
-        <Route path="*" element={<NotFound darkMode={toggle}/>} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     )
   )
@@ -129,7 +116,7 @@ function App() {
 
 
     return (
-        <div className={`App flex column justify-space-between ${toggle && "dark-mode"}`}>
+        <div className={`App flex column justify-space-between`}>
           <RouterProvider router={router} />
         </div>   
     );

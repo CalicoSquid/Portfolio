@@ -10,6 +10,7 @@
 
 .App {
     background-color: $primary-color;
+    color: $accent-color;
 
 }
 
@@ -53,10 +54,9 @@ a {
 }
 
 .logo-container {
-    grid-template-columns: repeat(auto-fit, minmax(80px, 100px));
     margin-block: 50px;
-    justify-content: space-between;
-    width: 50%;
+    justify-content: center;
+    flex-wrap: wrap;
     
     i {
         font-size: $font-size-xl;
@@ -66,7 +66,7 @@ a {
         border-radius: $base-border-radius;
         color: $secondary-color;
         border: 3px solid $secondary-color;
-        background-color: $accent-color;
+        background-color: $dark-primary-color;
 
         &:hover {
             animation: borderColors 0.5s steps(1) forwards;

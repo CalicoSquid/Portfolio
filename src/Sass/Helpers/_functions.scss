@@ -9,14 +9,14 @@ $layout-values: flex-start, flex-end, center, space-around, space-between;
 
 //Fancy boy
 @mixin fancy-button {
-    background-color: $accent-color;
+    background-color: $primary-color;
+    
     padding: $base-padding;
     font-size: $base-font-size;
     border: 3px solid $secondary-color;
     border-radius: $base-border-radius;
-    box-shadow: $base-box-shadow;
+    //box-shadow: $base-box-shadow;
     cursor: pointer;
-    color: $primary-color;
     transform: scale(1, 0.8);
         
     &:focus,
@@ -24,6 +24,21 @@ $layout-values: flex-start, flex-end, center, space-around, space-between;
     animation: borderColors 0.5s steps(1) forwards;
     font-weight: 600;
     }
+}
+
+@mixin dynamic-card {
+  padding: $base-padding;
+        border-radius: $base-border-radius;
+        color: #000;
+        width: 120px;
+
+        i {
+            font-size: 30px;
+            background-color: $dark-primary-color;
+            border-radius: 50%;
+            padding: math.div($base-padding, 2);
+            color: white;
+        }
 }
 
 //Darken on hover

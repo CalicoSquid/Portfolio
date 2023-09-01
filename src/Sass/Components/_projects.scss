@@ -4,53 +4,35 @@
     padding-bottom: 2rem;
 
     .card2 {
-        padding: $base-padding;
-        border-radius: $base-border-radius;
-        box-shadow: $dark-mode-box-shadow;
-        color: #000;
-        width: 120px;
-
-        i {
-            font-size: 30px;
-            background-color: #252b31;
-            border-radius: 50%;
-            padding: math.div($base-padding, 2);
-            color: white;
-        }
-    }
-
-    a {
-        text-align: center;
+        @include dynamic-card;
     }
 }
 
 
 
 .project-container  {
-    box-shadow: $dark-mode-box-shadow;
     animation: 1s ease-out 0s 1 slideInFromLeft;
     align-items: flex-start !important;
     padding: $base-padding * 2;
     margin-block: 2em;
-    height: 500px;
-    background-color: #252b31;
+    height: 400px;
+    background-color: $dark-primary-color;
     max-width: 90%;
     position: relative;
+    //border: 1px dashed $accent-color;
+
+    h1 {
+        margin-bottom: 10px;
+    }
 
     .project-text {
         max-width: 500px;
+        width: 100%;
         align-items: flex-start;
+        line-height: 1.7em;
 
-        h1 {
-            align-self: flex-start;
-        }
-    
-        h4 {
-            color: $secondary-color;
-        }
-
-        p {
-            line-height: 1.7em;
+        i {
+            color: gray;
         }
     
         a {
@@ -59,22 +41,19 @@
             &:hover {
                 color: $yellow-theme;
             }
-
-           
         }
     }
 
     .lang-box {
-        width: 100%;
 
         .languages {
             font-size: $font-size-sm;
             border: 2px solid $secondary-color;
             padding-inline: $base-padding;
-            padding-block: math.div($base-padding, 2);
+            padding-block: math.div($base-padding, 3);
             border-radius: $base-border-radius;
             color: $yellow-theme;
-            background-color: $accent-color;
+            background-color: $primary-color;
             margin-block: $base-margin;
         }
 
@@ -84,16 +63,11 @@
 
 .project-image {
    max-height: 300px;
-   box-shadow: $dark-mode-box-shadow;
+   width: 50%;
+   min-width: 250px;
+   box-shadow: $base-box-shadow;
 }
 
-.project-page {
-    width: 100%;
-
-    i {
-        color: gray;
-    }
-}
 
 .mobile-nav {
   .arrows {
@@ -101,23 +75,12 @@
       padding: $base-padding;
       
       .hide {
-          color: transparent;
+          opacity: 0.3;
       }
   }
 
   .card3 {
-    padding: $base-padding;
-    border-radius: $base-border-radius;
-    color: #000;
-    width: 120px;
-
-    i {
-        font-size: 30px;
-        background-color: #252b31;
-        border-radius: 50%;
-        padding: math.div($base-padding, 2);
-        color: white;
-    }
+    @include dynamic-card;
 }
 }
 

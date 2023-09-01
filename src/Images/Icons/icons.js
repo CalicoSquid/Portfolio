@@ -12,7 +12,8 @@ import d3 from "./d3-icon.png"
 import mongodb from "./mongodb-icon.png";
 import redux from "./redux-icon.png";
 import nextjs from "./nextjs-icon.png";
-import angular from "./angular-icon.png"
+import angular from "./angular-icon.png";
+import typescript from "./typescript.png"
 
 
 export {
@@ -31,4 +32,5 @@ export {
     redux,
     nextjs,
     angular,
+    typescript,
 }

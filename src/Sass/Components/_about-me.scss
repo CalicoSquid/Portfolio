@@ -5,8 +5,8 @@
 
     .about-head {
         width: 50%;
-        //padding: $base-padding * 2;
-        background: hsla(0, 1%, 74%, 0.5);
+        padding: $base-padding * 2;
+        background: hsla(0, 4%, 27%, 0.5);
         backdrop-filter: blur(0.7rem);
 
 
@@ -47,10 +47,6 @@
         }
     }
 
-    .logo-container {
-        width: 50%;
-        justify-content: space-between;
-    }
 
     .about-logos {
         width: 50%;

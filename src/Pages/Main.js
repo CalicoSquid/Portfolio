@@ -38,7 +38,7 @@ export default function Main({broken}) {
     return (
         <div className="main flex column justify-space-around">
             
-            <section className="intro flex column justify-center">
+            <section className="intro flex column justify-center" id="intro">
                 <div className="section-container main-info flex justify-center">
                     <div className="info-text">
                         <h1>Caleb Mow</h1>
@@ -90,7 +90,12 @@ export default function Main({broken}) {
             <div className="stack"></div>
 
             <section className="skills flex column justify-center">
-                <h1>Skills</h1>
+                <h1>
+                    <a href="#intro">
+                        <i className="fa-solid fa-arrow-up-long highlight back-to-top"></i>
+                    </a>
+                    {" "}
+                    Skills</h1>
                 <div className="section-container cards skill-section grid">
                     <SkillColumn title="Current Stack" skills={currentStackSkills} />
                     <SkillColumn title="Working on it" skills={workingOnItSkills} />
@@ -101,7 +106,13 @@ export default function Main({broken}) {
             <div className="stack flip"></div>
 
             <section className="projects flex column justify-center" id="projects">
-                <h1>Projects</h1>
+                <h1>
+                    <a href="#intro">
+                        <i className="fa-solid fa-arrow-up-long highlight back-to-top"></i>
+                    </a>  
+                    {" "}
+                    Projects
+                </h1>
                 {cardArray.length > 0 ? <div className="section-container cards grid">
                     {projects} 
                 </div> : <Error error={data.error}/>} 

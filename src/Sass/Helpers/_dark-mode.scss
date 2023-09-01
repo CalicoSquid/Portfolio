@@ -1,40 +1,6 @@
 
 
-.dark-mode {
-    background-color: $accent-color;
-    color: $primary-color;
 
-    .about-head {
-        padding: $base-padding * 2;
-        background: hsla(0, 4%, 27%, 0.5);
-    }
+    
 
-    .toggle {
-        color: $yellow-theme;
-    }
 
-    .break-everything {
-
-        p {
-            color: $primary-color;
-        }
-        
-    }
-
-    .skill-card {
-        box-shadow: $dark-mode-box-shadow;
-    }
-
-    .stack {
-        background-image: url("../../Images/code-bg.png");
-    }
-
-    input[type="range"] {
-        --track-color: yellow;
-    }
-
-    .controlpanel {
-        box-shadow: $dark-mode-box-shadow;
-    }
-
-}

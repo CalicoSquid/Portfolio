@@ -5,9 +5,10 @@ $key: random(6);
 
 
 //Theme Colors
-$primary-color: #f0f0f0;
+$primary-color: #303841;
+$dark-primary-color: #252b31;
 $secondary-color: #F04B54;
-$accent-color: #303841;
+$accent-color: #f0f0f0;
 $blue-theme: #30BFBF;
 $yellow-theme: #F2C230;
 
@@ -34,8 +35,8 @@ $base-border-radius: 10px;
 $border-radius-sm: math.div($base-border-radius, 4);
 
 //Box shadow
-$base-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-$dark-mode-box-shadow: rgba(226, 228, 230, 0.3) 0px 1px 2px 0px, rgba(226, 228, 230, 0.3) 0px 1px 3px 1px;
+//$base-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+$base-box-shadow: rgba(226, 228, 230, 0.3) 0px 1px 2px 0px, rgba(226, 228, 230, 0.3) 0px 1px 3px 1px;
 
 
 

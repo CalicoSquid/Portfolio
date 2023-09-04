@@ -13,7 +13,8 @@ import mongodb from "./mongodb-icon.png";
 import redux from "./redux-icon.png";
 import nextjs from "./nextjs-icon.png";
 import angular from "./angular-icon.png";
-import typescript from "./typescript.png"
+import typescript from "./typescript.png";
+import tailwind from "./tailwind.png";
 
 
 export {
@@ -33,4 +34,5 @@ export {
     nextjs,
     angular,
     typescript,
+    tailwind,
 }

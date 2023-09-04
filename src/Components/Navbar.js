@@ -46,7 +46,7 @@ export default function Navbar({toggleNav, showNav, closeNav, isMobile}) {
                 to="projects/savor" 
                 className="link" 
                 style={({isActive}) => isActive ? activeLinkStyle : null}
-                onClick={closeNav}
+                //onClick={closeNav}
                 >
                 Projects
                 </NavLink>

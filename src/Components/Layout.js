@@ -15,7 +15,15 @@ export default function Layout({showNav, closeNav, toggleNav, isMobile}) {
         <Outlet />
         <footer className="flex justify-center">
             <img src={squid} style={{height: "50px"}} alt=""/>
-            <p>Ⓒ 2023 CalicoSquid Code</p>
+            <p>Ⓒ 2023 
+                {" "}
+                <span className="highlight">C</span>
+                alico
+                <span className="highlight-blue">S</span>
+                quid
+                <span className="highlight-yellow">C</span>
+                ode
+            </p>
         </footer>
     </div>
     )

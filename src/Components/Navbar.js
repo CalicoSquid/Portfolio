@@ -27,7 +27,7 @@ export default function Navbar({toggleNav, showNav, closeNav, isMobile}) {
                 className="toggle-nav"
             >
                 <span className="sr-only">Menu</span>
-                <i className={`fa-solid ${showNav ? "fa-xmark" : "fa-bars"}`}/>                   
+                <i className={`fa-solid ${showNav ? "" : "fa-bars"}`}/>                   
             </button>
             
             {(showNav || !isMobile) && 
@@ -35,6 +35,7 @@ export default function Navbar({toggleNav, showNav, closeNav, isMobile}) {
                 <div className="nav-links flex">
                 <NavLink 
                 to="about" 
+                onClick={closeNav}
                 className="link" 
                 style={({isActive}) => isActive ? activeLinkStyle : null}
                 >
@@ -45,12 +46,14 @@ export default function Navbar({toggleNav, showNav, closeNav, isMobile}) {
                 to="projects/savor" 
                 className="link" 
                 style={({isActive}) => isActive ? activeLinkStyle : null}
+                onClick={closeNav}
                 >
                 Projects
                 </NavLink>
 
                 <NavLink 
                 to="contact" 
+                onClick={closeNav}
                 className="link" 
                 style={({isActive}) => isActive ? activeLinkStyle : null}
                 >

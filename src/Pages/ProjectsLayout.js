@@ -2,14 +2,20 @@ import { Outlet, NavLink, useLoaderData } from "react-router-dom";
 import { getProjects } from "../Utils/api";
 import MobileNav from "../Components/MobileProjectNav";
 import Error from "../Components/Error";
+import { useEffect } from "react";
 
 export function loader() {
     const data = getProjects()
     return data
 }
 
-export default function ProjectLayout({isMobile}) {
+export default function ProjectLayout({isMobile, closeNav}) {
     const data = useLoaderData();
+
+    useEffect(() => {
+        closeNav()
+    }, [])
+
     const projectData = data.error ? [] : data
     const colorArray = ["yellow", "yellow", "red", "blue"];
 

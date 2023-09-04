@@ -3,6 +3,11 @@
     width: 100%;
     padding: $base-padding;
 
+    .nav-links {
+        margin-right: 20px;
+        color: $accent-color;
+    }
+
     .toggle-nav {
         display: none;
     }

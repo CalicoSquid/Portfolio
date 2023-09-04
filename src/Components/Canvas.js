@@ -71,10 +71,7 @@ export default function Canvas() {
                     <img src={arrow}/>
                 </div>
             
-                <div
-                    className="controlpanel flex justify-space-around"
-                    
-                >   
+                <div className="controlpanel flex justify-space-around">   
                     <input
                         type="range"
                         value={size}
@@ -92,11 +89,8 @@ export default function Canvas() {
                     />
                     <small className="control-text">{color}</small> 
 
-                    <button
-                        onClick={clearCanvas}
-                    >
-                
-                    <i className="fa-solid fa-rotate-left highlight"></i>
+                    <button onClick={clearCanvas}>
+                        <i className="fa-solid fa-rotate-left highlight"></i>
                     </button>
                 </div>  
             </div>    

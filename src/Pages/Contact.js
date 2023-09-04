@@ -9,7 +9,7 @@ export default function Contact() {
             
             <div className="contact-head flex justify-center">
                 <div className="contact-head-text">
-                    <h1><i class="fa-solid fa-address-card contact-img highlight"></i>  Contact Me</h1>
+                    <h1><i className="fa-solid fa-address-card contact-img highlight"></i>  Contact Me</h1>
                     <br/>
                     <p>
                         Thanks for stopping by checking out my portfolio. 
@@ -23,12 +23,12 @@ export default function Contact() {
                     <br/>
 
                     <div className="contact-link flex ">
-                        <i class="fa-brands fa-whatsapp highlight"></i>
+                        <i className="fa-brands fa-whatsapp highlight"></i>
                         {" "}
                         +382 063242695
                     </div>
                     <div className=" contact-link flex justify-flex-start">
-                        <i class="fa-regular fa-envelope highlight"></i> 
+                        <i className="fa-regular fa-envelope highlight"></i> 
                         {" "}
                         <p 
                         onClick={() =>  navigator.clipboard.writeText('calicosquidcode@gmail.com')}

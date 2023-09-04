@@ -15,7 +15,7 @@ export default function ProjectDetails({broken}) {
         const projectPromise = useLoaderData();
 
         const renderProject = (project) => {
-            const langs = project.language.map(lang => <div className="languages">{lang}</div>);
+            const langs = project.language.map((lang, i) => <div className="languages" key={i}>{lang}</div>);
 
             return (
                 <div className="project-page justify-center flex">

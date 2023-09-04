@@ -12,6 +12,17 @@
             }
 
         }
+
+         
+    .description {
+        background: $blue-theme;
+        width: 100%;
+        min-height: 400px;
+        background-image: url("../../Images/mountains2.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
     }
 
     .intro, .projects {
@@ -68,7 +79,7 @@
 
         .nav-links {
             position: fixed;
-            inset: 0 0 0 50%;
+            inset: 0 -20px 0 40%;
             flex-direction: column;
             align-items: baseline;
             padding: min(30vh, 7rem) 2em;
@@ -77,16 +88,7 @@
             z-index: 9000;
 
             a {
-                font-size: $font-size-lrg;
-                color: $primary-color;
-            }
-
-            i {
-                position: absolute;
-                top: 0.8rem;
-                left: 2rem; 
-                font-size: 2rem;
-                z-index: 9999;
+                font-size: $font-size-xl;
             }
         }
     }
@@ -133,11 +135,16 @@
     .contact-img {
         display: none;
     }
+
 }
 
 
 
 @include breakpoint-min(60em) {
+
+    .pusher {
+        display: none;
+    }
 
     .about-logos {
         width: 80% !important;

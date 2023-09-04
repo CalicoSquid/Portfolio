@@ -1,5 +1,6 @@
 
 .canvas-wrapper {
+    
 
     .canvas {
         border-radius: 50%;
@@ -16,16 +17,16 @@
         width: 320px;
         display: flex;
         align-items: flex-start;
+        
 
         p {
             font-family: 'Sue Ellen Francisco', cursive;
-            font-size: $font-size-lrg;        
+            font-size: $font-size-lrg; 
         }
 
         img {
             margin: 7px;
-            height: 70px;
-            box-shadow: none;
+            height: 60px;
             transform: rotate(50deg);
             -moz-transform: scaleX(-1);
             -o-transform: scaleX(-1);
@@ -35,31 +36,14 @@
             -ms-filter: "FlipH";
         }
 
-        i {
-            cursor: pointer;
-            font-size: 20px;
-            border: 2px solid $secondary-color;
-            padding: math.div($base-padding, 2);
-            border-radius: 50%;
-
-            &:hover {
-                background-color: $yellow-theme;
-                color: #000
-            }
-        }
-
       }
 
     .controlpanel {
         padding: math.div($base-padding, 2);
-        //box-shadow: $base-box-shadow;
-        border-radius: $base-border-radius;
-        transition: opacity 0.5s;
         position:absolute;
-        bottom: -210px;
+        bottom: -215px;
         width: 17rem;
-        left: 50px;
-        height: 40px;
+        left: 40px;
 
         small {
             margin-left: -10px;
@@ -67,12 +51,11 @@
 
     }
 
-
     input[type="range"] {
         color: $secondary-color;
         --thumb-height: 1.125em;
         --track-height: 0.125em;
-        --track-color: black;
+        --track-color: #F2C230;
         --brightness-hover: 180%;
         --brightness-down: 80%;
         --clip-edges: 0.125em;

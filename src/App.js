@@ -8,14 +8,13 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import ProjectLayout, {loader as navLoader} from './Pages/ProjectsLayout';
 import ProjectDetails, { loader as projectLoader } from './Components/ProjectDetails';
-import Project from './Components/Project';
 import NotFound from './Components/NotFound';
 import Error from './Components/Error';
 
 
 
 function App() {
-
+  
   const [broken, setBroken] = useState(false)
   const [width, setWidth] = useState(window.innerWidth);
   const [showNav, setShowNav] = useState(false)
@@ -37,6 +36,7 @@ function App() {
 
 
   useEffect(() => {
+    
       window.addEventListener('resize', () => setWidth(window.innerWidth));
       return () => { 
           window.removeEventListener('resize', () => setWidth(window.innerWidth));
@@ -88,16 +88,12 @@ function App() {
           <ProjectLayout 
             breakEverything={breakEverything}
             broken={broken}
+            closeNav={closeNav}
             isMobile={isMobile}
           /> }
           errorElement={<Error breakEverything={breakEverything} broken={broken}/>}
           loader= {navLoader}
         >
-          <Route 
-            index 
-            element={<Project breakEverything={breakEverything} broken={broken}/> } 
-            errorElement={<Error />}
-          />
 
           <Route 
             path=":id" 

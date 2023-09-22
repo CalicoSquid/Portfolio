@@ -2,6 +2,7 @@ import  { useState, Suspense } from "react";
 import { useLoaderData, defer, Await } from "react-router-dom";
 import { getProject } from "../Utils/api";
 import Loading from "./Loading";
+import database from "../Images/database.png";
 
 export function loader({ params }) {
   const { id } = params;
@@ -9,7 +10,7 @@ export function loader({ params }) {
   return defer({ data });
 }
 
-export default function ProjectDetails({ broken }) {
+export default function ProjectDetails() {
   const projectPromise = useLoaderData();
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -26,6 +27,7 @@ export default function ProjectDetails({ broken }) {
 
     return (
       <div className="project-page justify-center flex">
+        <div className="project-wrapper">
         <div className={`project-container justify-center flex`}>
           <div className="project-text flex column justify-space-between">
             <div>
@@ -46,6 +48,7 @@ export default function ProjectDetails({ broken }) {
               </a>
             </div>
             <div className="lang-box flex">{langs}</div>
+            {project.database && <div className="database flex languages"><img style={{height: "20px"}}src={database} alt="database" />{project.database}</div>}
           </div>
 
           <img
@@ -54,7 +57,8 @@ export default function ProjectDetails({ broken }) {
             alt="project frontpage"
             onLoad={handleImageLoad} // Add the onLoad event handler here
           />
-          {!imageLoaded && <div>Loading Image...</div>}
+          {!imageLoaded && <div className="project-image">Loading Image...</div>}
+        </div>
         </div>
       </div>
     );

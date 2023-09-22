@@ -15,7 +15,7 @@ export function loader() {
 export default function Main({broken}) {
     const data = useLoaderData()
     const cardArray = data.error ? [] : data; 
-    const colorArray = ["yellow", "yellow", "red", "blue"];
+    const colorArray = ["blue", "yellow", "red", "blue", "yellow"];
 
     const projects = cardArray.map((project, i) => {
         return (

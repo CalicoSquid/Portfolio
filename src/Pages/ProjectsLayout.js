@@ -17,7 +17,7 @@ export default function ProjectLayout({isMobile, closeNav}) {
     }, [])
 
     const projectData = data.error ? [] : data
-    const colorArray = ["yellow", "yellow", "red", "blue"];
+    const colorArray = ["blue", "yellow", "red", "blue", "yellow"];
 
     const activeHostLinkStyle = {
         borderTop: `10px solid transparent`,

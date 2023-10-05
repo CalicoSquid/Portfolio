@@ -1,7 +1,8 @@
 
 import { NavLink } from "react-router-dom";
 import avatar from "../Images/avatar.png";
-import ClickAwayListener from '@mui/base/ClickAwayListener';
+import { ClickAwayListener } from "@mui/base";
+
 
 export default function Navbar({toggleNav, showNav, closeNav, isMobile}) {
 

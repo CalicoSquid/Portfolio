@@ -3,7 +3,7 @@ export default function Loading() {
     return (
             <div 
             className=" loading flex justify-center"
-            style={{height: "500px", marginTop: "2rem"}}
+            style={{minHeight: "500px", marginTop: "2rem",}}
             >
                 <div 
                     className="flex justify-center"

@@ -1,8 +1,10 @@
 import  { useState, Suspense } from "react";
 import { useLoaderData, defer, Await } from "react-router-dom";
 import { getProject } from "../Utils/api";
+
 import Loading from "./Loading";
 import database from "../Images/database.png";
+import { CircularProgress } from "@mui/material";
 
 export function loader({ params }) {
   const { id } = params;
@@ -54,10 +56,10 @@ export default function ProjectDetails() {
           <img
             className="project-image"
             src={project.header}
-            alt="project frontpage"
+            alt={project.name}
             onLoad={handleImageLoad} // Add the onLoad event handler here
           />
-          {!imageLoaded && <div className="project-image">Loading Image...</div>}
+          {!imageLoaded && <CircularProgress color="secondary" />}
         </div>
         </div>
       </div>
